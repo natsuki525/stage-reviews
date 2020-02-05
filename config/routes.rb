@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
+
   devise_for :admins, controllers: {
   	sessions: 'devise/admin/sessions',
   	passwords: 'devise/admin/passwords',
   	registrations: 'devise/admin/registrations'
   }
   devise_for :users, controllers: {
-  	sessions: 'devise/users/sessions',
-  	passwords: 'devise/users/passwords',
-  	registrations: 'devise/users/registrations'
+    sessions: 'devise/user/sessions',
+    passwords: 'devise/user/passwords',
+    registrations: 'devise/user/registrations'
   }
+
   namespace :user do
 
   resources :reviews
