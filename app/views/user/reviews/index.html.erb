@@ -1,0 +1,24 @@
+<div class="container review-index">
+	<h1>レビュー一覧</h1>
+	<div class="row">
+	<% @reviews.each do |review| %>
+		<div class="col-2">
+			<div class ="review-image">
+			<%= link_to review_path(review.id) do %>
+				<% if review.image_id.present? %>
+					<%= attachment_image_tag item, :image, :fill, 300, 200 %>
+				<% else %>
+					<%= image_tag 'no_image.jpg', :size=>"300x200" %>
+				<% end %>
+			<% end %>
+			</div><br>
+			<div class="review_title">
+				<%= review.title %>
+			</div><br>
+			<div class="review_user_name">
+				<%= review.user.nickname %>
+			</div><br>
+		</div>
+	<% end %>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container review-show">
+	<h1><%= @review.title %></h1>
+	<div class="flash">
+		<%= flash[:notice_update] %>
+	</div>
+	<div class="row">
+		<div class="col-5">
+			<%= attachment_image_tag @review, :image, :fill, 300, 200 %>
+			<h3>評価</h3>
+			<p>満足度：　<%= @review.satisfaction_level %></p>
+			<p>ストーリー性：　<%= @review.story_level %></p>
+			<p>舞台セット： <%= @review.stage_set_level %></p>
+			<p>衣装：　<%= @review.costume_level %></p>
+		</div>
+		<div class="col-7">
+			<p>観劇日：　2020年2月5日15時</p>
+			<p>劇場名：　東京グローブ座</p>
+			<p>座席：　<%=@review.seat %></p>
+			<p>座席の見え方：　<%= @review.view_level %></p>
+			<p>感想：　<%= @review.body %></p>
+		</div>
+	</div>
+</div>
