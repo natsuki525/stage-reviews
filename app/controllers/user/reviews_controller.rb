@@ -6,10 +6,10 @@ class User::ReviewsController < ApplicationController
 
  def create
  	@review = Review.new(review_params)
- 	@review.user_id = current_user.user_id
+ 	@review.user_id = current_user.id
  	if @review.save
- 		redirect_to review_path(@review.id)
- 		flach[:notice_new] = "レビューが投稿されました！"
+ 		redirect_to user_reviews_path
+ 		# flach[:notice_new] = "レビューが投稿されました！"
  	else
  		render :new
  	end
