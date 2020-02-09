@@ -48,7 +48,7 @@ class User::ReviewsController < ApplicationController
 
  private
     def review_params
-      params.require(:review).permit(:user_id, :title, :body, :stage_date, :theater_id, :seat, :view_level, :satisfaction_level, :story_level, :stage_set_level, :cosutume_level, :image, :created_at, :updated_at)
+      params.require(:review).permit(:user_id, :title, :body, :stage_date, :theater_id, :seat, :view_level, :satisfaction_level, :story_level, :stage_set_level, :costume_level, :image, :created_at, :updated_at)
     end
 
 end

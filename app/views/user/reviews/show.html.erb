@@ -7,16 +7,77 @@
 		<div class="col-5">
 			<%= attachment_image_tag @review, :image, :fill, 300, 200 %>
 			<h3>評価</h3>
-			<p>満足度：　<%= @review.satisfaction_level %></p>
-			<p>ストーリー性：　<%= @review.story_level %></p>
-			<p>舞台セット： <%= @review.stage_set_level %></p>
-			<p>衣装：　<%= @review.costume_level %></p>
+			<p>満足度：
+				<% if @review.satisfaction_level == 1 %>
+					★
+				<% elsif @review.satisfaction_level == 2 %>
+					★★
+				<% elsif @review.satisfaction_level == 3 %>
+					★★★
+				<% elsif @review.satisfaction_level == 4 %>
+					★★★★
+				<% else %>
+					★★★★★
+				<% end %>
+
+			</p>
+			<p>ストーリー性：
+				<% if @review.story_level == 1 %>
+					★
+				<% elsif @review.story_level == 2 %>
+					★★
+				<% elsif @review.story_level == 3 %>
+					★★★
+				<% elsif @review.story_level == 4 %>
+					★★★★
+				<% else %>
+					★★★★★
+				<% end %>
+			</p>
+			<p>舞台セット：
+				<% if @review.stage_set_level == 1 %>
+					★
+				<% elsif @review.stage_set_level == 2 %>
+					★★
+				<% elsif @review.stage_set_level == 3 %>
+					★★★
+				<% elsif @review.stage_set_level == 4 %>
+					★★★★
+				<% else %>
+					★★★★★
+				<% end %>
+			</p>
+			<p>衣装：
+				<% if @review.costume_level == 1 %>
+					★
+				<% elsif @review.costume_level == 2 %>
+					★★
+				<% elsif @review.costume_level == 3 %>
+					★★★
+				<% elsif @review.costume_level == 4 %>
+					★★★★
+				<% else %>
+					★★★★★
+				<% end %>
+			</p>
 		</div>
 		<div class="col-7">
 			<p>観劇日：　2020年2月5日15時</p>
 			<p>劇場名：　東京グローブ座</p>
 			<p>座席：　<%=@review.seat %></p>
-			<p>座席の見え方：　<%= @review.view_level %></p>
+			<p>座席の見え方：
+				<% if @review.view_level == 1 %>
+					★
+				<% elsif @review.view_level == 2 %>
+					★★
+				<% elsif @review.view_level == 3 %>
+					★★★
+				<% elsif @review.view_level == 4 %>
+					★★★★
+				<% else %>
+					★★★★★
+				<% end %>
+			</p>
 			<p>感想：　<%= @review.body %></p>
 		</div>
 	</div>

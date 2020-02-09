@@ -34,8 +34,8 @@
 				<lavel class="theater">座席</lavel>
 				<%= f.text_field :seat %>
 			</div>
-			<div class="field">
-				<lavel class="view_level">座席</lavel>
+			<div class="field row" id="star">
+				<lavel class="view_level">座席の見え方</lavel>
 				<%= f.select :view_level, [["★","1"],["★★","2"],["★★★","3"],["★★★★","4"],["★★★★★","5"]], :prompt=>"選択してください" ,class:"custom-select col-3"%>
 			</div>
 			<div class="subtitle">
