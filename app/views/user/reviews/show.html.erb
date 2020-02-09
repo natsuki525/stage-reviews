@@ -63,8 +63,8 @@
 		</div>
 		<div class="col-7">
 			<p>観劇日：　2020年2月5日15時</p>
-			<p>劇場名：　東京グローブ座</p>
-			<p>座席：　<%=@review.seat %></p>
+			<p>劇場名：　<%= @review.theater_name %></p>
+			<p>座席：　<%= @review.seat %></p>
 			<p>座席の見え方：
 				<% if @review.view_level == 1 %>
 					★

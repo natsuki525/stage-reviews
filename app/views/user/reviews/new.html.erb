@@ -28,7 +28,16 @@
 			</div>
 			<div class="field">
 				<lavel class="theater">劇場</lavel>
-				東京グローブ座
+				<%= radio_button_tag(:selected_btn, "been_theater") %>
+				<%= label_tag(:been_theater, "行ったことのある劇場から選択") %>
+				<p>
+					劇場名：<%= f.collection_select :theater, @theaters, :id, :name,{},class:"custom-select col-7" %>
+				</p>
+				<%= radio_button_tag(:selected_btn, "new_theater") %>
+				<%= label_tag(:been_theater, "新しい劇場を追加") %>
+				<p>
+					劇場名：<%= f.text_field :theater_name %>
+				</p>
 			</div>
 			<div class="field">
 				<lavel class="theater">座席</lavel>

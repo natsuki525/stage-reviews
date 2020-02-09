@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_090241) do
+ActiveRecord::Schema.define(version: 2020_02_09_140239) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_090241) do
     t.string "title"
     t.text "body"
     t.datetime "stage_date"
-    t.integer "theater_id"
     t.string "seat"
     t.integer "view_level"
     t.integer "satisfaction_level"
@@ -37,6 +36,14 @@ ActiveRecord::Schema.define(version: 2020_02_05_090241) do
     t.integer "stage_set_level"
     t.integer "costume_level"
     t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "theater_name"
+  end
+
+  create_table "theaters", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
