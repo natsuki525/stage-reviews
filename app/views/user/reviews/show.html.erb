@@ -6,6 +6,7 @@
 	<div class="row">
 		<div class="col-5">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no_image.jpg" %>
+			<%= render 'user/favorites/favorites', review: @review %>
 			<h3>評価</h3>
 			<p>満足度：
 				<% if @review.satisfaction_level == 1 %>
@@ -62,7 +63,7 @@
 			</p>
 		</div>
 		<div class="col-7">
-			<p>観劇日：　2020年2月5日15時</p>
+			<p>観劇日：　<%= @review.stage_date %></p>
 			<p>劇場名：　<%= @review.theater_name %></p>
 			<p>座席：　<%= @review.seat %></p>
 			<p>座席の見え方：
