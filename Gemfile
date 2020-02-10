@@ -71,4 +71,10 @@ gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 
+#デバック
 gem 'pry-rails'
+
+#カレンダー表示
+gem 'bootstrap4-datetime-picker-rails'
+gem 'momentjs-rails'
+gem 'font-awesome-rails'

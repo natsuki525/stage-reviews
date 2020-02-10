@@ -25,7 +25,27 @@
 			</div>
 			<div class="field">
 				<lavel class="stage_date">観劇日</lavel>
-				2020年2月5日　15時
+				<div class="form-group">
+            <div class="input-group date" id="datetimepicker9" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker9"/>
+                <div class="input-group-append" data-target="#datetimepicker9" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker9').datetimepicker({
+                icons: {
+                    time: "fa fa-clock-o",
+                    date: "fa fa-calendar",
+                    up: "fa fa-arrow-up",
+                    down: "fa fa-arrow-down"
+                }
+            });
+        });
+    </script>
 			</div>
 			<div class="field">
 				<lavel class="theater">劇場</lavel>
