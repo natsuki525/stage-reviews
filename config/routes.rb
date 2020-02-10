@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   namespace :user do
 
-  resources :reviews
-  resource :user, only: [:show, :edit, :update, :destroy]
-  resource :theater, except: [:show]
+   resources :reviews do
+     resource :favorites, only: [:create, :destroy]
+   end
+   resources :users, only: [:show, :edit, :update, :destroy]
+   resource :theater, except: [:show]
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

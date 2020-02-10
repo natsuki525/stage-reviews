@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :theaters, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   attachment :image
   accepts_nested_attributes_for :theaters
 end
