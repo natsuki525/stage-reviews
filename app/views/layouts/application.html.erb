@@ -11,6 +11,48 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top">
+      <ul class="list-inline-item">
+        <% if user_signed_in? %>
+          <li class="list-inline-item">
+            <%= link_to root_path do %>
+              <p>Home</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to home_about_path do %>
+              <p>About</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to user_user_path(current_user) do %>
+              <p>MyPage</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <p>Logout</p>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="list-inline-item">
+            <%= link_to root_path do %>
+              <p>Home</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to home_about_path do %>
+              <p>About</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to new_user_session_path do %>
+              <p>Login</p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
