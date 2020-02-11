@@ -7,6 +7,40 @@
 		<div class="col-5">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no_image.jpg" %>
 			<%= render 'user/favorites/favorites', review: @review %>
+			<h3>reviewer</h3>
+			<div class="profile_image">
+				<%= link_to user_user_path(@user) do %>
+					<% if @user.image_id.present? %>
+						<%= attachment_image_tag @user, :image, :fill, 100, 100 %>
+					<% else %>
+						<%= image_tag 'no_image.jpg', :size=>"100x100" %>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="nickname">
+				<%= link_to user_user_path(@user) do %>
+					<%= @user.nickname %>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-7">
+			<p>観劇日：　<%= @review.stage_date %></p>
+			<p>劇場名：　<%= @review.theater_name %></p>
+			<p>座席：　<%= @review.seat %></p>
+			<p>座席の見え方：
+				<% if @review.view_level == 1 %>
+					★
+				<% elsif @review.view_level == 2 %>
+					★★
+				<% elsif @review.view_level == 3 %>
+					★★★
+				<% elsif @review.view_level == 4 %>
+					★★★★
+				<% else %>
+					★★★★★
+				<% end %>
+			</p>
+			<p>感想：　<%= @review.body %></p>
 			<h3>評価</h3>
 			<p>満足度：
 				<% if @review.satisfaction_level == 1 %>
@@ -61,38 +95,14 @@
 					★★★★★
 				<% end %>
 			</p>
-		</div>
-		<div class="col-7">
-			<p>観劇日：　<%= @review.stage_date %></p>
-			<p>劇場名：　<%= @review.theater_name %></p>
-			<p>座席：　<%= @review.seat %></p>
-			<p>座席の見え方：
-				<% if @review.view_level == 1 %>
-					★
-				<% elsif @review.view_level == 2 %>
-					★★
-				<% elsif @review.view_level == 3 %>
-					★★★
-				<% elsif @review.view_level == 4 %>
-					★★★★
-				<% else %>
-					★★★★★
-				<% end %>
-			</p>
-			<p>感想：　<%= @review.body %></p>
-			<h3>reviewer</h3>
-			<div class="profile_image">
-				<%= link_to user_user_path(@user) do %>
-					<% if @user.image_id.present? %>
-						<%= attachment_image_tag @user, :image, :fill, 100, 100 %>
-					<% else %>
-						<%= image_tag 'no_image.jpg', :size=>"100x100" %>
-					<% end %>
+			<div class="edit_btn">
+				<% if @review.user == current_user %>
+					<%= link_to "編集する", edit_user_review_path(@review), class:"btn btn-outline-primary" %>
 				<% end %>
 			</div>
-			<div class="nickname">
-				<%= link_to user_user_path(@user) do %>
-					<%= @user.nickname %>
+			<div class="destroy_btn">
+				<% if @review.user == current_user %>
+					<%= link_to "削除する", user_review_path(@review), method: :delete, class:"btn btn-outline-primary" %>
 				<% end %>
 			</div>
 		</div>

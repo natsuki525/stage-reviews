@@ -50,7 +50,7 @@ class User::ReviewsController < ApplicationController
  def update
  	@review = Review.find(params[:id])
  	if @review.update(review_params)
- 		redirect_to review_path(@review)
+ 		redirect_to user_review_path(@review)
  		flash[:notice_update] = "レビューが更新されました！"
  	else
  		render :edit
@@ -59,10 +59,10 @@ class User::ReviewsController < ApplicationController
 
  def destroy
  	@review = Review.find(params[:id])
- 	if @review.user_id = current_user.user_id
+ 	if @review.user = current_user
  		@review.destroy
- 		redirect_to reviews_path
- 		flash[:notice_destroy] = "レビューが削除されました。"
+ 		redirect_to user_reviews_path
+ 		# flash[:notice_destroy] = "レビューが削除されました。"
  	end
  end
 
