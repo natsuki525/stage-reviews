@@ -11,6 +11,15 @@
 					<%= link_to "編集する", edit_user_user_path(current_user), class:"btn btn-outline-primary" %>
 				<% end %>
 			</div>
+			<div class="follow_btn">
+				<% if @user != current_user %>
+					<% if @user.followed_by?(current_user) %>
+						<%= link_to "フォロー中", user_user_relationships_path(@user.id), method: :delete, class:"btn btn-outline-primary" %>
+					<% else %>
+						<%= link_to "フォローする", user_user_relationships_path(@user.id), method: :post, class:"btn btn-outline-primary" %>
+					<% end %>
+				<% end %>
+			</div>
 		</div>
 		<div class="col-4">
 			<h2>ステータス</h2>
