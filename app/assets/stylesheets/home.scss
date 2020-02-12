@@ -1,3 +1,36 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+i {
+	font-size: 50px;
+	text-align: right;
+	color: #74645C;
+}
+i:hover {
+	color: #BEB098;
+}
+
+.polaroid {
+	background-color: #F4F3F6;
+	margin: 15px;
+	padding: 20px, 0, 0, auto;
+	width: 200px;
+	height: 400px;
+}
+
+.review-image {
+	width: 100px;
+	height: 200px;
+	margin: 15px auto;
+}
+
+.review_title {
+	font-size: 20px;
+	text-align: center;
+}
+
+.review_user_name {
+	font-size: 15px;
+	text-align: center;
+}

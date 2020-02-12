@@ -16,3 +16,28 @@
  @import "bootstrap";
  @import "font-awesome";
  @import "tempusdominus-bootstrap-4.css";
+
+ .jumbotron {
+	background-image: url(color-pencil.jpg);
+	height: 600px;
+	width: 85%;
+	background-position: bottom;
+	background-size: cover;
+	border-radius: 50px;
+	margin: 0 auto;
+}
+
+body {
+	background-color: #EDE795;
+}
+
+.container {
+	background-color: #EEF2EF;
+	border-radius: 50px;
+}
+
+h1 {
+	color: #74645C;
+	padding: 15px 0;
+	margin: 0 auto;
+}

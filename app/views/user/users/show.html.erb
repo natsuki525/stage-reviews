@@ -1,10 +1,16 @@
 <div class="container">
 	<div class="row">
 		<div class="col-3">
+			<%= attachment_image_tag @user, :image, :fill, 200, 200, fallback: "no_image.jpg",:size=>"200x200" %>
 		</div>
 		<div class="col-5">
 			<p>アカウント名: <%= @user.nickname %></p>
 			<p>email: <%= @user.email %></p>
+			<div class="edit_btn">
+				<% if @user == current_user %>
+					<%= link_to "編集する", edit_user_user_path(current_user), class:"btn btn-outline-primary" %>
+				<% end %>
+			</div>
 		</div>
 		<div class="col-4">
 			<h2>ステータス</h2>
