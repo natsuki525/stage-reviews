@@ -25,8 +25,18 @@
 			<h2>ステータス</h2>
 			<p>レビュー</p>
 			<p>いいね</p>
-			<p>フォロー</p>
-			<p>フォロワー</p>
+			<div class="follow">
+				フォロー中：
+				<%= link_to follows_user_user_path(@user) do %>
+					<%= @user.followings.count %>
+				<% end %>
+			</div>
+			<div class="follow">
+				フォロワー：
+				<%= link_to followers_user_user_path(@user) do %>
+					<%= @user.followers.count %>
+				<% end %>
+			</div>
 			<p>劇場一覧</p>
 		</div>
 	</div>
