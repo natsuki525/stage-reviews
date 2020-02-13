@@ -40,7 +40,12 @@
 							<%= @user.followers.count %>
 						<% end %>
 					</div>
-					<p>劇場一覧</p>
+					<div class="theater">
+						劇場：
+						<%= link_to user_theaters_path(@user.theaters) do %>
+							<%= @theaters.count %>
+						<% end %>
+					</div>
 				</div>
 			</div>
 		</div>

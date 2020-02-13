@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+	<h1>劇場一覧</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>id</td>
+					<td>劇場名</td>
+				</tr>
+			</thead>
+			<tbody>
+			<% @theaters.each do |theater| %>
+				<tr>
+					<td><%= theater.id %></td>
+					<td><%= theater.name %></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
