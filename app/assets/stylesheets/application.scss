@@ -18,10 +18,10 @@
  @import "tempusdominus-bootstrap-4.css";
 
  .jumbotron {
-	background-image: url(color-pencil.jpg);
+	background-image: url(theater1.jpeg);
 	height: 600px;
-	width: 85%;
-	background-position: bottom;
+	width: 90%;
+	background-position: top;
 	background-size: cover;
 	border-radius: 50px;
 	margin: 0 auto;
@@ -43,4 +43,41 @@ h1 {
 	padding: 15px 0;
 	margin: 0 auto;
 	font-family: 'Hiragino Kaku Gothic'
+}
+.top {
+	.review-new-icon {
+		padding-left: 1000px;
+	}
+
+	i {
+		font-size: 50px;
+		color: #74645C;
+	}
+	i:hover {
+		color: #BEB098;
+	}
+
+	.polaroid {
+		background-color: #F4F3F6;
+		margin: 15px;
+		padding: 20px, 0, 0, auto;
+		width: 200px;
+		height: 400px;
+	}
+
+	.review-image {
+		width: 100px;
+		height: 200px;
+		margin: 15px auto;
+	}
+
+	.review_title {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.review_user_name {
+		font-size: 15px;
+		text-align: center;
+	}
 }

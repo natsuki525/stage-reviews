@@ -7,8 +7,8 @@
 		<div class="col-5">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no_image.jpg" %>
 			<%= render 'user/favorites/favorites', review: @review %>
-			<h3>reviewer</h3>
-			<div class="profile_image">
+			<h3>reviewed by</h3>
+			<div class="prof_image">
 				<%= link_to user_user_path(@user) do %>
 					<% if @user.image_id.present? %>
 						<%= attachment_image_tag @user, :image, :fill, 100, 100 %>

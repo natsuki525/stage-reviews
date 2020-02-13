@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container user-show">
 	<div class="row">
-		<div class="col-3">
+		<div class="prof-image col-3">
 			<%= attachment_image_tag @user, :image, :fill, 200, 200, fallback: "no_image.jpg",:size=>"200x200" %>
 		</div>
 		<div class="col-5">
@@ -23,7 +23,12 @@
 		</div>
 		<div class="col-4">
 			<h2>ステータス</h2>
-			<p>レビュー</p>
+			<div class="review">
+				レビュー：
+				<%= link_to user_reviews_path do %>
+					<%= @user_review %>
+				<% end %>
+			</div>
 			<p>いいね</p>
 			<div class="follow">
 				フォロー中：

@@ -2,6 +2,7 @@ class User::UsersController < ApplicationController
 
  def show
  	@user = User.find(params[:id])
+  @user_review = Review.count
  end
 
  def edit
