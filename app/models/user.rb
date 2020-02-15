@@ -22,4 +22,9 @@ class User < ApplicationRecord
   def followed_by?(user)
   	passive_relationships.find_by(following_id: user.id).present?
   end
+
+  ransacker :full_name do |parent|
+  Arel::Nodes::InfixOperation.new('||',
+    parent.table[:last_name], parent.table[:first_name])
+  end
 end
