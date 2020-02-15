@@ -42,68 +42,13 @@
 					</div>
 					<div class="theater">
 						劇場：
-						<%= link_to user_theaters_path(@user.theaters) do %>
+						<%= link_to '/user/theaters/' do %>
 							<%= @theaters.count %>
 						<% end %>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-6">
-			<div class="row">
-				<h3>投稿数：<%= @user.reviews.count %></h3>
-				<table class="table table-borderless">
-					<thead>
-						<tr>
-							<th></th>
-							<th>作品名</th>
-							<th>いいね数</th>
-						</tr>
-					</thead>
-					<tbody>
-					<% @reviews.each do |review| %>
-						<tr>
-							<td></td>
-							<td>
-								<%= link_to user_review_path(@review.user) do %>
-									<%= review.title %>
-								<% end %>
-							</td>
-							<td>
-								<%= render 'favorites/favorites', review: review %>
-							</td>
-						</tr>
-					<% end %>
-					</tbody>
-				</table>
-			</div>
-			<div class="row">
-				<h3>いいね一覧:<%= @favorite_reviews.count %></h3>
-				<table class="table table-borderless">
-					<thead>
-						<tr>
-							<th></th>
-							<th>作品名</th>
-							<th>いいね数</th>
-						</tr>
-					</thead>
-					<tbody>
-					<% @favorite_reviews.each do |review| %>
-						<tr>
-							<td></td>
-							<td>
-								<%= link_to user_review_path(@review.user) do %>
-									<%= review.title %>
-								<% end %>
-							</td>
-							<td>
-								<%= render 'favorites/favorites', review: review %>
-							</td>
-						</tr>
-					<% end %>
-					</tbody>
-				</table>
-			</div>
-		</div>
+		
 	</div>
 </div>

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     get :follows, on: :member
     get :followers, on: :member
   end
-   resources :theaters, except: [:show]
+   resources :theaters
    resources :reviews do
      resource :favorites, only: [:create, :destroy]
    end
