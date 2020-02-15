@@ -78,3 +78,6 @@ gem 'pry-rails'
 gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails'
 gem 'font-awesome-rails'
+
+#検索
+gem 'ransack'

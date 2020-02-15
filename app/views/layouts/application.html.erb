@@ -52,6 +52,28 @@
           </li>
         <% end %>
       </ul>
+
+      <% if user_signed_in? %>
+        <dl class ="searchbox">
+        <%= search_form_for @search, url: user_reviews_path do |f| %>
+          <div class ="searching">
+            <dt><%= f.search_field :title_cont ,placeholder: "キーワード検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
+          </div>
+        <% end %>
+        </dl>
+
+      <% elsif admin_signed_in? %>
+
+      <% else %>
+        <dl class ="searchbox">
+        <%= search_form_for @search, url: user_reviews_path do |f| %>
+          <div class ="searching">
+            <dt><%= f.search_field :title_cont ,placeholder: "キーワード検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
+          </div>
+        <% end %>
+        </dl>
+      <% end %>
+
     </header>
     <div class ="jumbotron jumbotron-fluid"></div>
     <%= yield %>
