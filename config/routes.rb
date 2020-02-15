@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get "/home/about", to:'home#about'
+  get 'user/users/leave', to:'user/users#leave'
 
   devise_for :admins, controllers: {
   	sessions: 'devise/admin/sessions',
