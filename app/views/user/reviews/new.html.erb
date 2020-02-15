@@ -27,10 +27,10 @@
 				<lavel class="stage_date">観劇日</lavel>
 				<div class="form-group">
             		<div class="input-group date" id="datetimepicker9" data-target-input="nearest">
-                		<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker9" />
-                			<div class="input-group-append" data-target="#datetimepicker9" data-toggle="datetimepicker">
-                    			<div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                			</div>
+            			<%= f.text_field :stage_date, class: "form-control datetimepicker-input", data: {target: "#datetimepicker9"} %>
+                		<div class="input-group-append" data-target="#datetimepicker9" data-toggle="datetimepicker">
+                    		<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                		</div>
             		</div>
         		</div>
     		</div>
@@ -108,7 +108,7 @@
 }
 </script>
 
-<script type="text/javascript">
+<script>
     $(function () {
         $('#datetimepicker9').datetimepicker({
             icons: {
