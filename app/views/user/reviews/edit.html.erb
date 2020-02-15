@@ -1,0 +1,109 @@
+<div class="container review-edit">
+	<h1>レビュー編集</h1>
+	<div class="row errors">
+	<% if @review.errors.any? %>
+        	<div id="error_explanation">
+          		<h2><%= pluralize(@review.errors.count, "error") %> prohibited this user from being saved:</h2>
+          		<ul>
+          			<% @review.errors.full_messages.each do |msg| %>
+            		<li><%= msg %></li>
+          			<% end %>
+          		</ul>
+        	</div>
+    	<% end %>
+    </div>
+    <div class="row">
+    	<%= form_for(@review, url: {controller: "reviews", action: "update"}) do |f| %>
+    	<div class="col-5">
+    		<%= f.attachment_field :image, placeholder: "画像選択", id: :review_image %>
+    		<% if @review.image.present? %>
+    			<%= attachment_image_tag @review, :image, :fill, 300, 400, id: :img_prev, size: "300x400" %>
+    		<% end %>
+    	</div>
+    	<script>
+			$(function() {
+    			function readURL(input) {
+        			if (input.files && input.files[0]) {
+        			var reader = new FileReader();
+        			reader.onload = function (e) {
+    			$('#img_prev').attr('src', e.target.result);
+        			}
+        				reader.readAsDataURL(input.files[0]);
+        			}
+    			}
+    			$("#review_image").change(function(){
+        			readURL(this);
+    			});
+ 	 		});
+		</script>
+    	<div class="col-7">
+    		<div class="field">
+				<label class="title">作品名</label>
+				<%= f.text_field :title, autofocus: true %>
+			</div>
+			<div class="field">
+				<lavel class="stage_date">観劇日</lavel>
+				<div class="form-group">
+            <div class="input-group date" id="datetimepicker9" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker9"/>
+                <div class="input-group-append" data-target="#datetimepicker9" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker9').datetimepicker({
+                icons: {
+                    time: "fa fa-clock-o",
+                    date: "fa fa-calendar",
+                    up: "fa fa-arrow-up",
+                    down: "fa fa-arrow-down"
+                }
+            });
+        });
+    </script>
+			</div>
+			<div class="field">
+				<lavel class="theater">劇場</lavel>
+				<%= f.text_field :theater_name, autofocus: true %>
+			</div>
+			<div class="field">
+				<lavel class="theater">座席</lavel>
+				<%= f.text_field :seat, autofocus: true %>
+			</div>
+			<div class="field row" id="star">
+				<lavel class="view_level">座席の見え方</lavel>
+				<%= f.select :view_level, [["★","1"],["★★","2"],["★★★","3"],["★★★★","4"],["★★★★★","5"]], :prompt=>"選択してください" ,class:"custom-select col-3", autofocus: true %>
+			</div>
+			<div class="subtitle">
+				<h1>評価</h1>
+			</div>
+			<div class="field">
+				<lavel class="satisfaction_level">満足度</lavel>
+				<%= f.select :satisfaction_level, [["★","1"],["★★","2"],["★★★","3"],["★★★★","4"],["★★★★★","5"]], :prompt=>"選択してください" ,class:"custom-select col-3", autofocus: true %>
+			</div>
+			<div class="field">
+				<lavel class="story_level">ストーリー性</lavel>
+				<%= f.select :story_level, [["★","1"],["★★","2"],["★★★","3"],["★★★★","4"],["★★★★★","5"]], :prompt=>"選択してください" ,class:"custom-select col-3", autofocus: true %>
+			</div>
+			<div class="field">
+				<lavel class="stage_set_level">舞台セット</lavel>
+				<%= f.select :stage_set_level, [["★","1"],["★★","2"],["★★★","3"],["★★★★","4"],["★★★★★","5"]], :prompt=>"選択してください" ,class:"custom-select col-3", autofocus: true %>
+			</div>
+			<div class="field">
+				<lavel class="costume_level">衣装</lavel>
+				<%= f.select :costume_level, [["★","1"],["★★","2"],["★★★","3"],["★★★★","4"],["★★★★★","5"]], :prompt=>"選択してください" ,class:"custom-select col-3", autofocus: true %>
+			</div>
+			<div class="field">
+				<lavel class="body">感想</lavel>
+				<%= f.text_area :body, autofocus: true %>
+			</div>
+			<div class="submit">
+				<%= f.submit "変更を保存", class:"btn btn-outline-primary" %>
+			</div>
+    	</div>
+    	<% end %>
+    </div>
+</div>

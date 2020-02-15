@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ @import "font-awesome";
+ @import "tempusdominus-bootstrap-4.css";
+
+ .jumbotron {
+	background-image: url(theater1.jpeg);
+	height: 600px;
+	padding: 0;
+	max-width: 100%;
+	background-position: top;
+	background-size: cover;
+	// border-radius: 50px;
+	margin: 0 auto;
+}
+
+body {
+	background-color: #EDE795;
+}
+
+.container {
+	// background-color: #EEF2EF;
+	border-radius: 50px;
+	height: 1000px;
+	padding-top: 50px;
+}
+
+h1 {
+	color: #74645C;
+	padding: 15px 0;
+	margin: 0 auto;
+	font-family: 'Hiragino Kaku Gothic'
+}
+.top {
+	.review-new-icon {
+		padding-left: 1000px;
+	}
+
+	i {
+		font-size: 50px;
+		color: #74645C;
+	}
+	i:hover {
+		color: #BEB098;
+	}
+
+	.polaroid {
+		background-color: #F4F3F6;
+		margin: 15px;
+		padding: 20px, 0, 0, auto;
+		width: 200px;
+		height: 400px;
+	}
+
+	.review-image {
+		width: 100px;
+		height: 200px;
+		margin: 15px auto;
+	}
+
+	.review_title {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.review_user_name {
+		font-size: 15px;
+		text-align: center;
+	}
+}
+
+.user-show {
+	.prof {
+		padding: 30px;
+	}
+	.status {
+		padding-top: 50px;
+	}
+}
+
+.review-new {
+	.new_review {
+		width: 100%;
+	}
+	.col-5 {
+		float: left;
+	}
+	.col-7 {
+		float: right;
+	}
+	.field {
+		padding-top: 20px;
+	}
+	.submit {
+		padding-top: 40px;
+	}
+}

@@ -1,0 +1,31 @@
+<div class="container top">
+	<div class="row">
+		<h1>Reviews</h1>
+	</div>
+	<div class="row review-new-icon">
+		<%= link_to new_user_review_path do %>
+			<i class="fas fa-plus-circle"></i>
+		<% end %>
+	</div>
+	<div class="row">
+	<% @reviews.each do |review| %>
+		<div class="polaroid col-2">
+			<div class ="review-image">
+			<%= link_to user_review_path(review.id) do %>
+				<% if review.image_id.present? %>
+					<%= attachment_image_tag review, :image, :fill, 100, 200 %>
+				<% else %>
+					<%= image_tag 'no_image.jpg', :size=>"100x200" %>
+				<% end %>
+			<% end %>
+			</div><br>
+			<div class="review_title">
+				<%= review.title %>
+			</div><br>
+			<div class="review_user_name">
+				<%= review.user.nickname %>
+			</div><br>
+		</div>
+	<% end %>
+	</div>
+</div>

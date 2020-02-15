@@ -5,11 +5,55 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/543b872ac6.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top">
+      <ul class="list-inline-item">
+        <% if user_signed_in? %>
+          <li class="list-inline-item">
+            <%= link_to root_path do %>
+              <p>Home</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to home_about_path do %>
+              <p>About</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to user_user_path(current_user) do %>
+              <p>MyPage</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <p>Logout</p>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="list-inline-item">
+            <%= link_to root_path do %>
+              <p>Home</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to home_about_path do %>
+              <p>About</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to new_user_session_path do %>
+              <p>Login</p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
+    <div class ="jumbotron jumbotron-fluid"></div>
     <%= yield %>
   </body>
 </html>
