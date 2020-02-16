@@ -109,3 +109,49 @@ h1 {
 		padding-top: 40px;
 	}
 }
+
+.user-followers {
+	.polaroid {
+		background-color: #F4F3F6;
+		margin: 15px;
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left:  20px;
+	}
+
+	.image {
+		width: 200px;
+		height: 200px;
+		padding: 0;
+	}
+
+	.nickname {
+		color: #74645C;
+		font-family: 'Caveat', cursive;
+		font-size: 30px;
+		text-align: center;
+	}
+}
+
+.user-follows {
+	.polaroid {
+		background-color: #F4F3F6;
+		margin: 15px;
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left:  20px;
+	}
+
+	.image {
+		width: 200px;
+		height: 200px;
+		padding: 0;
+	}
+
+	.nickname {
+		color: #74645C;
+		font-family: 'Caveat', cursive;
+		font-size: 30px;
+		text-align: center;
+	}
+}

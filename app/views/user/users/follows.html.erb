@@ -1,17 +1,22 @@
-<div class="contain">
+<div class="container user-follows">
 	<div class="row">
 		<h1>フォロー中</h1>
+	</div>
+	<div class="row">
 		<% @users.each do |user| %>
-		<div class="prof_image">
-			<%= link_to user_user_path(user) do %>
-				<%= attachment_image_tag(user, :image, :fill, 50, 50, fallback: "no_image.jpg") %>
-			<% end %>
-		</div><br>
-		<div class="nickname">
-			<%= link_to user_user_path(user) do %>
-				<%= user.nickname %>
-			<% end %>
-		</div><br>
+		<div class="polaroid">
+			<div class="prof_image">
+				<%= link_to user_user_path(user) do %>
+					<%= attachment_image_tag(user, :image, :fill, 50, 50, fallback: "no_image.jpg", :size=>"200x200") %>
+				<% end %>
+			</div><br>
+			<div class="nickname">
+				<%= link_to user_user_path(user) do %>
+					<%= user.nickname %>
+				<% end %>
+			</div><br>
+			</div>
 		<% end %>
+		</div>
 	</div>
 </div>
