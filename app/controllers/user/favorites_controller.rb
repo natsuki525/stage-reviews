@@ -1,4 +1,9 @@
 class User::FavoritesController < ApplicationController
+
+ def index
+ 	@user = User.find_by(id: params[:user_id])
+    @favorites = Favorite.where(user_id: @user.id)
+ end
  def create
  	review = Review.find(params[:review_id])
  	favorite = current_user.favorites.new(review_id: review.id)

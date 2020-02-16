@@ -66,6 +66,10 @@ class User::ReviewsController < ApplicationController
  	end
  end
 
+ def favorites
+ 	@all_ranks = Review.find(favorite.group(:review_id).order('count(review_id) desc').limit(10).pluck(:review_id))
+ end
+
  private
     def review_params
       params.require(:review).permit(:user_id, :title, :body, :stage_date, :theater_id, :seat, :view_level, :satisfaction_level, :story_level, :stage_set_level, :costume_level, :image, :theater_name, :created_at, :updated_at)

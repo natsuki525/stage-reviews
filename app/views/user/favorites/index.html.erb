@@ -1,0 +1,6 @@
+<div class="container">
+  <% @favorites.each do |favorite| %>
+    <% review = Review.find_by(id: favorite.review_id) %>
+    <%= review.title %>
+  <% end %>
+</div>
