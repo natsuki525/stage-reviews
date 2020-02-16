@@ -17,19 +17,52 @@
  @import "font-awesome";
  @import "tempusdominus-bootstrap-4.css";
 
- .jumbotron {
-	background-image: url(theater1.jpeg);
-	height: 600px;
-	padding: 0;
-	max-width: 100%;
-	background-position: top;
-	background-size: cover;
-	// border-radius: 50px;
-	margin: 0 auto;
-}
+ .logo {
+ 	background-image: url(theater1.jpeg);
+ 	height: 170px;
+ 	width: 400px;
+ 	margin: 0 auto;
+ 	background-size: cover;
+ 	text-align: center;
+ 	padding-top: 50px;
+ 	font-family: 'Homemade Apple', cursive;
+ 	margin-top: 50px;
+ }
 
-body {
-	background-color: #EDE795;
+//  .jumbotron {
+// 	background-image: url(theater1.jpeg);
+// 	height: 600px;
+// 	padding: 0;
+// 	max-width: 100%;
+// 	background-position: top;
+// 	background-size: cover;
+// 	// border-radius: 50px;
+// 	margin: 0 auto;
+// }
+
+// body {
+// 	background-color: #EDE795;
+// }
+
+nav {
+	p {
+		font-size: 25px;
+		font-family: 'Homemade Apple', cursive;
+		}
+
+	ul {
+		padding: 0;
+		a{
+			text-decoration: none;
+			color: orange;
+			transition:.4s;
+
+			&:hover{
+						color:orange;
+						transition:.4s;
+					}
+		}
+	}
 }
 
 .container {

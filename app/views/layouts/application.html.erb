@@ -11,7 +11,11 @@
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top">
+    <div class="logo">
+      <h2>Stage Reviews</h2>
+    </div>
+    <header>
+      <nav class="navbar justify-content-center">
       <ul class="list-inline-item">
         <% if user_signed_in? %>
           <li class="list-inline-item">
@@ -52,8 +56,9 @@
           </li>
         <% end %>
       </ul>
-
-      <% if user_signed_in? %>
+      </nav>
+    </header>
+    <% if user_signed_in? %>
         <dl class ="searchbox">
         <%= search_form_for @search, url: user_reviews_path do |f| %>
           <div class ="searching">
@@ -73,9 +78,7 @@
         <% end %>
         </dl>
       <% end %>
-
-    </header>
-    <div class ="jumbotron jumbotron-fluid"></div>
+    <!-- <div class ="jumbotron jumbotron-fluid"></div> -->
     <%= yield %>
   </body>
 </html>
