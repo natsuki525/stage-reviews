@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
+gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -69,7 +70,6 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
 gem 'bootstrap', '~> 4.2.1'
-gem 'jquery-rails'
 
 #デバック
 gem 'pry-rails'

@@ -6,7 +6,9 @@
 	<div class="row">
 		<div class="col-5">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no_image.jpg" %>
-			<%= render 'user/favorites/favorites', review: @review %>
+			<div id="favorites">
+				<%= render 'user/favorites/favorites', review: @review %>
+			</div>
 			<h3>reviewed by</h3>
 			<div class="prof_image">
 				<%= link_to user_user_path(@user) do %>
