@@ -42,7 +42,7 @@
 					</div>
 					<div class="theater">
 						劇場：
-						<%= link_to '/user/theaters/' do %>
+						<%= link_to user_user_theaters_path(@user.id) do %>
 							<%= @theaters.count %>
 						<% end %>
 					</div>

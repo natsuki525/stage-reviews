@@ -1,7 +1,9 @@
 class User::TheatersController < ApplicationController
 
  def index
- 	@theaters = current_user.theaters.all
+ 	user = User.find(params[:user_id])
+ 	# @theaters = Theater.joins(:user).select("theaters.name")
+ 	@theaters = user.theaters
  end
 
  def show

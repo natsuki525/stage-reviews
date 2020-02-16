@@ -19,11 +19,11 @@ Rails.application.routes.draw do
   namespace :user do
 
    resources :users, only: [:show, :edit, :update, :destroy] do
-    resource :relationships, only: [:create, :destroy]
-    get :follows, on: :member
-    get :followers, on: :member
+      resources :theaters, only: :index
+      resource :relationships, only: [:create, :destroy]
+      get :follows, on: :member
+      get :followers, on: :member
   end
-   resources :theaters
    resources :reviews do
      resource :favorites, only: [:create, :destroy]
    end
