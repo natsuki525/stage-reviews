@@ -1,13 +1,8 @@
 class User::TheatersController < ApplicationController
 
  def index
- 	user = User.find(params[:user_id])
- 	# @theaters = Theater.joins(:user).select("theaters.name")
- 	@theaters = user.theaters
- end
-
- def show
- 	@theaters = Theater.all
+ 	@user = User.find(params[:user_id])
+ 	@theaters = @user.theaters
  end
 
  def edit
@@ -21,6 +16,16 @@ class User::TheatersController < ApplicationController
  		flash[:notice_update] = "劇場名を更新しました！"
  	else
  		render :edit
+ 	end
+ end
+
+ def destroy
+ 	@user = User.find(params[:user_id])
+ 	@theater = Theater.find(params[:id])
+ 	if @theater.user = current_user
+ 		@theater.destroy
+ 		redirect_to user_user_theaters_path(@user, @theater)
+ 		# flash[:notice_destroy] = "劇場が削除されました。"
  	end
  end
 

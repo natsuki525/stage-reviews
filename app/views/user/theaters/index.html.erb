@@ -6,6 +6,8 @@
 				<tr>
 					<td>id</td>
 					<td>劇場名</td>
+					<td></td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -13,6 +15,16 @@
 				<tr>
 					<td><%= theater.id %></td>
 					<td><%= theater.name %></td>
+					<td>
+						<% if @user == current_user %>
+							<%= link_to "編集する", edit_user_user_theater_path(@user, theater.id), class:"btn btn-outline-primary" %>
+						<% end %>
+					</td>
+					<td>
+						<% if @user == current_user %>
+							<%= link_to "削除する", user_user_theater_path(@user, theater.id), method: :delete, class:"btn btn-outline-primary"  %>
+						<% end %>
+					</td>
 				</tr>
 			<% end %>
 			</tbody>
