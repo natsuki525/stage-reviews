@@ -19,9 +19,9 @@
         <% end %>
         </dl>
       <% end %>
-	<div class="row">
+	<!-- <div class="row">
 		<h1>Reviews</h1>
-	</div>
+	</div> -->
 	<div class="row review-new-icon">
 		<%= link_to new_user_review_path do %>
 			<i class="fas fa-plus-circle"></i>
@@ -34,7 +34,7 @@
 				<% if review.image_id.present? %>
 					<%= attachment_image_tag review, :image, :fill, 250, 400 %>
 				<% else %>
-					<%= image_tag 'no_image.jpg', :size=>"250x400" %>
+					<%= image_tag 'no-image-review.png', :size=>"250x400" %>
 				<% end %>
 				<div class="mask">
 					<div class="caption">
@@ -53,4 +53,5 @@
 			</div><br> -->
 	<% end %>
 	</div>
+	<%= paginate @reviews, class: "paginate" %>
 </div>

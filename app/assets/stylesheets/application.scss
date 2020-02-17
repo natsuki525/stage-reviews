@@ -17,59 +17,73 @@
  @import "font-awesome";
  @import "tempusdominus-bootstrap-4.css";
 
+ body {
+ 	color: #74645C;
+ }
+
  .logo {
  	background-image: url(theater1.jpeg);
- 	height: 170px;
- 	width: 400px;
+ 	height: 300px;
+ 	width: 650px;
  	margin: 0 auto;
  	background-size: cover;
  	text-align: center;
  	padding-top: 50px;
- 	font-family: 'Homemade Apple', cursive;
  	margin-top: 50px;
+ 	h1{
+ 		font-family: "Nikukyu";
+ 		font-size: 50px;
+ 		color: #52556E
+ 	}
  }
 
-//  .jumbotron {
-// 	background-image: url(theater1.jpeg);
-// 	height: 600px;
-// 	padding: 0;
-// 	max-width: 100%;
-// 	background-position: top;
-// 	background-size: cover;
-// 	// border-radius: 50px;
-// 	margin: 0 auto;
-// }
+ .jumbotron {
+	background-image: url(header-theater3.jpeg);
+	height: 300px;
+	padding: 0;
+	max-width: 100%;
+	background-position: top;
+	background-size: cover;
+	// border-radius: 50px;
+	margin: 0 auto;
+}
 
-// body {
-// 	background-color: #EDE795;
-// }
+header {
+	background-color: #FFF;
+}
 
 nav {
+	text-align: center;
 	p {
 		font-size: 25px;
-		font-family: 'Homemade Apple', cursive;
+		font-family: 'Vollkorn', serif;
 		}
 
 	ul {
-		padding: 0;
+		width: 600px;
+		margin: 0 auto;
 		a{
 			text-decoration: none;
-			color: orange;
+			color: #4E4449;
 			transition:.4s;
 
 			&:hover{
-						color:orange;
+						color:#4E4449;
 						transition:.4s;
 					}
 		}
+	li {
+		padding-right: 20px;
+	}
 	}
 }
 
 .container {
 	// background-color: #EEF2EF;
 	border-radius: 50px;
-	height: 1000px;
+	// height: 1000px;
 	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 h1 {
@@ -78,7 +92,79 @@ h1 {
 	margin: 0 auto;
 	font-family: 'Hiragino Kaku Gothic'
 }
+
+.about {
+	i {
+		margin-bottom: 80px;
+	}
+	h5 {
+		font-family: "游ゴシック体";
+	}
+	.box1 {
+		background-color: #F5F0D6;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 50px;
+		margin-left: 90px;
+		color: #C82136;
+	}
+	.box2 {
+		background-color: #B5D569;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 50px;
+		margin: 0 50px;
+		color: #C82136;
+	}
+	.box3 {
+		background-color: #B0DBD4;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 50px;
+		color: #C82136;
+	}
+	.box4 {
+		background-color: #87BFC1;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-left: 90px;
+		color: #C82136;
+	}
+	.box5 {
+		background-color: #BEB098;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin: 0 50px;
+		color: #C82136;
+	}
+	.box6 {
+		background-color: #EDE795;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		color: #C82136;
+	}
+}
 .top {
+	#review_title {
+		width: 300px;
+		border-radius: 5px;
+	}
+	.search-btn {
+		margin-left: 10px;
+		border-radius: 5px;
+	}
 	.review-new-icon {
 		padding-left: 1000px;
 	}
@@ -140,13 +226,90 @@ h1 {
 	// }
 }
 
+.review-index {
+	#review_title {
+		width: 300px;
+		border-radius: 5px;
+	}
+	.search-btn {
+		margin-left: 10px;
+		border-radius: 5px;
+	}
+	.review-new-icon {
+		padding-left: 1000px;
+	}
+
+	i {
+		font-size: 50px;
+		color: #74645C;
+	}
+	i:hover {
+		color: #BEB098;
+	}
+
+	// .polaroid {
+	// 	background-color: #F4F3F6;
+	// 	margin: 15px;
+	// 	padding: 20px, 0, 0, auto;
+	// 	width: 200px;
+	// 	height: 400px;
+	// }
+
+	.review-image {
+		border-radius: 20px;
+		margin: 5px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.review-image .caption {
+		font-size: 17px;
+		text-align: center;
+		padding-top: 150px;
+		color: #FFF;
+	}
+
+	.review-image .mask {
+		width: 100%;
+		height: 100%;
+		position: absolute;	/* 絶対位置指定 */
+		top: 0;
+		left: 0;
+		opacity: 0;	/* マスクを表示しない */
+		background-color: rgba(0,0,0,0.5);	/* マスクは半透明 */
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+	}
+
+	.review-image:hover .mask{
+		opacity: 1;
+	}
+}
+
 .user-show {
 	.prof {
 		padding: 30px;
 	}
-	.status {
-		padding-top: 50px;
+	.box {
+		a{
+			text-decoration: none;
+			color: #87BFC1;
+
+			&:hover{
+						color:#B0DBD4;
+					}
+		}
+		margin-top: 50px;
+		padding-top: 20px;
+		border: 1px solid;
+		width:100px;
+		height: 100px;
+		text-align: center;
+		i {
+			font-size:40px;
+		}
 	}
+
 }
 
 .review-new {
@@ -253,4 +416,33 @@ h1 {
     height: auto;
     opacity: 1;
 }
+}
+
+.pagination {
+	a {
+		text-decoration: none;
+		color: #74645C;
+		&:hover{
+			color:#BEB098;
+		}
+	}
+	span {
+		border: 1px solid;
+		padding: 5px;
+		margin: 5px;
+		a{
+			span{
+				border: none;
+			}
+		}
+	}
+}
+
+footer {
+	.container {
+		height: 200px;
+	}
+	background-image: url(footer.jpeg);
+	background-repeat: no-repeat;
+	background-position:center;
 }

@@ -4,18 +4,15 @@
     <title>StageReviews</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/543b872ac6.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="logo">
-      <h2>Stage Reviews</h2>
-    </div>
-    <header>
-      <nav class="navbar justify-content-center">
+    <header class="sticky-top">
+      <nav class="navbar navbar-fixed-top　justify-content-center">
       <ul class="list-inline-item">
         <% if user_signed_in? %>
           <li class="list-inline-item">
@@ -58,8 +55,15 @@
       </ul>
       </nav>
     </header>
-    
-    <!-- <div class ="jumbotron jumbotron-fluid"></div> -->
+    <!-- <div class="logo">
+      <h1>ステージレポ</h1>
+    </div> -->
+    <div class ="jumbotron jumbotron-fluid"></div>
     <%= yield %>
+    <footer>
+      <div class="container">
+          <h1 class="text-center"></h1>
+        </div>
+    </footer>
   </body>
 </html>

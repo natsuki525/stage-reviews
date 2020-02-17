@@ -25,33 +25,34 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="status">
-				<h3>ステータス</h3>
-					<div class="favorite">
-						いいね：
+					<div class="box">
+						いいね<br>
 						<%= link_to user_user_favorites_path(@user) do %>
+							<i class="fas fa-heart"></i>
 							<%= @user.favorites.count %>
 						<% end %>
 					</div>
-					<div class="follow">
-						フォロー中：
-						<%= link_to follows_user_user_path(@user) do %>
-							<%= @user.followings.count %>
-						<% end %>
-					</div>
-					<div class="follow">
-						フォロワー：
-						<%= link_to followers_user_user_path(@user) do %>
-							<%= @user.followers.count %>
-						<% end %>
-					</div>
-					<div class="theater">
-						劇場：
+					<div class="box">
+						劇場<br>
 						<%= link_to user_user_theaters_path(@user.id) do %>
+							<i class="fas fa-synagogue"></i>
 							<%= @theaters.count %>
 						<% end %>
 					</div>
-				</div>
+					<div class="box">
+						フォロー中<br>
+						<%= link_to follows_user_user_path(@user) do %>
+							<i class="fas fa-address-book"></i>
+							<%= @user.followings.count %>
+						<% end %>
+					</div>
+					<div class="box">
+						フォロワー<br>
+						<%= link_to followers_user_user_path(@user) do %>
+							<i class="far fa-address-book"></i>
+							<%= @user.followers.count %>
+						<% end %>
+					</div>
 			</div>
 		</div>
 		<div class="col-6">
@@ -62,7 +63,7 @@
 						<tr>
 							<th></th>
 							<th>作品名</th>
-							<th>いいね数</th>
+							<th>投稿日</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -75,12 +76,13 @@
 								<% end %>
 							</td>
 							<td>
-
+								<%= l review.created_at, format: :long %>
 							</td>
 						</tr>
 					<% end %>
 					</tbody>
 				</table>
+				<%= paginate @reviews, class: "paginate" %>
 			</div>
 		</div>
 	</div>

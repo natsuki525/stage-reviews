@@ -5,7 +5,7 @@
 	</div>
 	<div class="row">
 		<div class="col-5">
-			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no_image.jpg" %>
+			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no-image-review.png", :size=>"300x400" %>
 			<div id="favorites">
 				<%= render 'user/favorites/favorites', review: @review %>
 			</div>

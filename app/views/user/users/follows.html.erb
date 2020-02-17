@@ -7,7 +7,7 @@
 		<div class="polaroid">
 			<div class="prof_image">
 				<%= link_to user_user_path(user) do %>
-					<%= attachment_image_tag(user, :image, :fill, 50, 50, fallback: "no_image.jpg", :size=>"200x200") %>
+					<%= attachment_image_tag(user, :image, :fill, 200, 200, fallback: "no_image.jpg", :size=>"200x200") %>
 				<% end %>
 			</div><br>
 			<div class="nickname">
@@ -15,8 +15,8 @@
 					<%= user.nickname %>
 				<% end %>
 			</div><br>
-			</div>
-		<% end %>
 		</div>
+		<% end %>
+		<%= paginate @users, class: "paginate" %>
 	</div>
 </div>

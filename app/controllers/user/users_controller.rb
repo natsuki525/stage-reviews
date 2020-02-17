@@ -3,7 +3,7 @@ class User::UsersController < ApplicationController
 
  def show
  	@user = User.find(params[:id])
-  @reviews = @user.reviews
+  @reviews = @user.reviews.page(params[:page]).per(10).order('created_at DESC')
   @theaters = @user.theaters
  end
 
@@ -23,12 +23,12 @@ class User::UsersController < ApplicationController
 
  def follows
     user = User.find(params[:id])
-    @users = user.followings
+    @users = user.followings.page(params[:page]).per(12)
   end
 
   def followers
     user = User.find(params[:id])
-    @users = user.followers
+    @users = user.followers.page(params[:page]).per(12)
   end
 
   def leave
