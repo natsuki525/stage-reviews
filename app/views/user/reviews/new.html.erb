@@ -24,6 +24,10 @@
 				<%= f.text_field :title %>
 			</div>
 			<div class="field">
+				<label class="troupe_name">劇団名</label>
+				<%= f.text_field :troupe_name %>
+			</div>
+			<div class="field">
 				<lavel class="stage_date">観劇日</lavel>
 				<div class="form-group">
             		<div class="input-group date" id="datetimepicker9" data-target-input="nearest">
@@ -79,6 +83,10 @@
 			<div class="field">
 				<lavel class="body">感想</lavel>
 				<%= f.text_area :body %>
+			</div>
+			<div class="field">
+				<lavel class="body"></lavel>
+				<%= f.check_box :is_spoiler, {}, "true", "false" %>　感想にネタバレを含む場合はチェックをお願いします。
 			</div>
 			<div class="submit">
 				<%= f.submit "投稿", class:"btn btn-outline-primary"%>

@@ -1,8 +1,28 @@
 <div class="container review-index">
+	<% if user_signed_in? %>
+        <dl class ="searchbox">
+        <%= search_form_for @search, url: user_reviews_path do |f| %>
+          <div class ="searching">
+            <dt><%= f.search_field :title_or_troupe_name_cont ,placeholder: "作品名か劇団名で検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
+          </div>
+        <% end %>
+        </dl>
+
+      <% elsif admin_signed_in? %>
+
+      <% else %>
+        <dl class ="searchbox">
+        <%= search_form_for @search, url: user_reviews_path do |f| %>
+          <div class ="searching">
+            <dt><%= f.search_field :title_or_troupe_name_cont ,placeholder: "作品名か劇団名で検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
+          </div>
+        <% end %>
+        </dl>
+      <% end %>
 	<h1>検索結果</h1>
 	<div class="row">
 		<div class="col-10">
-			<h4><%= "全#{@reviews.count}件" %></h4>
+			<h4><%= "全#{@search_reviews.count}件" %></h4>
 		</div>
 	</div>
 	<div class="row">

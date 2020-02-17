@@ -1,4 +1,5 @@
 class User::FavoritesController < ApplicationController
+	before_action :authenticate_user!
 
  def index
  	@user = User.find_by(id: params[:user_id])
