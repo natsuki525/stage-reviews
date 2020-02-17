@@ -377,45 +377,102 @@ h1 {
 }
 
 .review-show {
+
+	h1 {
+		margin-bottom: 15px;
+	}
+
+	.fav {
+		a{
+			text-decoration: none;
+			color: #EC7986;
+
+			&:hover{
+						color:#EC7986;
+					}
+		}
+	}
+
+	i {
+		font-size: 30px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+	}
+	.nickname {
+		padding-top: 10px;
+		font-size: 20px;
+		a {
+			text-decoration: none;
+			color: #74645C;
+
+			&:hover{
+				color:#BEB098;
+			}
+		}
+	}
+	span {
+		font-size: 20px;
+		.star {
+			color: #F2B922;
+		}
+	}
+
+	.tag {
+		width: 130px;
+    	padding: 0.5em 1em;
+    	margin: 2em 0;
+    	color: #232323;
+    	background-color: #E2ECBA;
+    	border-left: solid 20px #CDD866;
+    	h3 {
+    		margin: 0; 
+    		padding: 0;
+    	}
+	}
 	/*全体*/
-.hidden_box {
-    margin: 2em 0;/*前後の余白*/
-    padding: 0;
-}
+	.hidden_box {
+    	margin: 2em 0;/*前後の余白*/
+    	padding: 0;
+	}
 
-/*ボタン装飾*/
-.hidden_box label {
-    padding: 15px;
-    font-weight: bold;
-    border: solid 2px black;
-    cursor :pointer;
-}
+	/*ボタン装飾*/
+	.hidden_box label {
+    	padding: 15px;
+    	font-weight: bold;
+    	border: solid 2px black;
+    	cursor :pointer;
+	}
 
-/*ボタンホバー時*/
-.hidden_box label:hover {
-    background: #efefef;
-}
+	/*ボタンホバー時*/
+	.hidden_box label:hover {
+    	background: #efefef;
+	}
 
-/*チェックは見えなくする*/
-.hidden_box input {
-    display: none;
-}
+	/*チェックは見えなくする*/
+	.hidden_box input {
+    	display: none;
+	}
 
-/*中身を非表示にしておく*/
-.hidden_box .hidden_show {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
-}
+	/*中身を非表示にしておく*/
+	.hidden_box .hidden_show {
+    	height: 0;
+    	padding: 0;
+    	overflow: hidden;
+    	opacity: 0;
+    	transition: 0.8s;
+	}
 
-/*クリックで中身表示*/
-.hidden_box input:checked ~ .hidden_show {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
-}
+	/*クリックで中身表示*/
+	.hidden_box input:checked ~ .hidden_show {
+   		padding: 10px 0;
+    	height: auto;
+    	opacity: 1;
+	}
+
+	.edit_btn {
+		margin-bottom: 20px;
+	}
 }
 
 .pagination {

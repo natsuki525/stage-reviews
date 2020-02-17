@@ -1,10 +1,12 @@
 <div class="container review-show">
-	<h1><%= @review.title %></h1>
+	<div class="row">
+		<h1>「　<%= @review.title %>　」</h1>
+	</div>
 	<div class="flash">
 		<%= flash[:notice_update] %>
 	</div>
 	<div class="row">
-		<div class="col-5">
+		<div class="col-5" style="padding-left: 100px;">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no-image-review.png", :size=>"300x400" %>
 			<div id="favorites">
 				<%= render 'user/favorites/favorites', review: @review %>
@@ -38,13 +40,13 @@
 			</div>
 		</div>
 		<div class="col-7">
-			<p>観劇日：　<%= @review.stage_date %></p>
+			<p><span>【観劇日】</span><%= @review.stage_date %></p>
 			<% if @review.troupe_name.present? %>
-				<p>劇団名：<%= @review.troupe_name %></p>
+				<p><span>【劇団名】</span><%= @review.troupe_name %></p>
 			<% end %>
-			<p>劇場名：　<%= @review.theater_name %></p>
-			<p>座席：　<%= @review.seat %></p>
-			<p>座席の見え方：
+			<p><span>【劇場名】</span>　<%= @review.theater_name %></p>
+			<p><span>【座席】</span>　<%= @review.seat %></p>
+			<p><span>【座席の見え方】</span>
 				<% if @review.view_level == 1 %>
 					★
 				<% elsif @review.view_level == 2 %>
@@ -58,7 +60,7 @@
 				<% end %>
 			</p>
 			<p>
-				感想：
+				<span>【感想】</span>
 				<% if @review.is_spoiler == false %>
 					<%= @review.body %>
 				<% else %>
@@ -73,8 +75,11 @@
 					</div>
 				<% end %>
 			</p>
-			<h3>評価</h3>
-			<p>満足度：
+			<div class="tag">
+				<h3>評価</h3>
+			</div>
+			<p><span>
+				【満足度】
 				<% if @review.satisfaction_level == 1 %>
 					★
 				<% elsif @review.satisfaction_level == 2 %>
@@ -86,9 +91,10 @@
 				<% else %>
 					★★★★★
 				<% end %>
+				</span>
 
 			</p>
-			<p>ストーリー性：
+			<p><span>【ストーリー性】
 				<% if @review.story_level == 1 %>
 					★
 				<% elsif @review.story_level == 2 %>
@@ -100,8 +106,9 @@
 				<% else %>
 					★★★★★
 				<% end %>
+				</span>
 			</p>
-			<p>舞台セット：
+			<p><span>【舞台セット】
 				<% if @review.stage_set_level == 1 %>
 					★
 				<% elsif @review.stage_set_level == 2 %>
@@ -113,8 +120,9 @@
 				<% else %>
 					★★★★★
 				<% end %>
+				</span>
 			</p>
-			<p>衣装：
+			<p><span>【衣装】
 				<% if @review.costume_level == 1 %>
 					★
 				<% elsif @review.costume_level == 2 %>
@@ -126,6 +134,7 @@
 				<% else %>
 					★★★★★
 				<% end %>
+				</span>
 			</p>
 			<div class="edit_btn">
 				<% if @review.user == current_user %>
@@ -134,7 +143,7 @@
 			</div>
 			<div class="destroy_btn">
 				<% if @review.user == current_user %>
-					<%= link_to "削除する", user_review_path(@review), method: :delete, class:"btn btn-outline-primary" %>
+					<%= link_to "削除する", user_review_path(@review), method: :delete, class:"btn btn-outline-danger mb-4", data: { confirm: '削除しますか？' } %>
 				<% end %>
 			</div>
 		</div>

@@ -24,7 +24,7 @@
 	</div> -->
 	<div class="row review-new-icon">
 		<%= link_to new_user_review_path do %>
-			<i class="fas fa-plus-circle"></i>
+			<i class="fas fa-edit" style="font-size: 80px; padding-bottom: 20px;"></i>
 		<% end %>
 	</div>
 	<div class="row">
@@ -38,7 +38,7 @@
 				<% end %>
 				<div class="mask">
 					<div class="caption">
-					<%= review.title %><br>
+					「<%= review.title %>」<br>
 					<%= review.user.nickname %>
 					</div>
 				</div>
