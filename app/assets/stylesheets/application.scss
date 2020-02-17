@@ -91,29 +91,53 @@ h1 {
 		color: #BEB098;
 	}
 
-	.polaroid {
-		background-color: #F4F3F6;
-		margin: 15px;
-		padding: 20px, 0, 0, auto;
-		width: 200px;
-		height: 400px;
-	}
+	// .polaroid {
+	// 	background-color: #F4F3F6;
+	// 	margin: 15px;
+	// 	padding: 20px, 0, 0, auto;
+	// 	width: 200px;
+	// 	height: 400px;
+	// }
 
 	.review-image {
-		width: 100px;
-		height: 200px;
-		margin: 15px auto;
+		border-radius: 20px;
+		margin: 5px;
+		overflow: hidden;
+		position: relative;
 	}
 
-	.review_title {
-		font-size: 20px;
+	.review-image .caption {
+		font-size: 17px;
 		text-align: center;
+		padding-top: 150px;
+		color: #FFF;
 	}
 
-	.review_user_name {
-		font-size: 15px;
-		text-align: center;
+	.review-image .mask {
+		width: 100%;
+		height: 100%;
+		position: absolute;	/* 絶対位置指定 */
+		top: 0;
+		left: 0;
+		opacity: 0;	/* マスクを表示しない */
+		background-color: rgba(0,0,0,0.5);	/* マスクは半透明 */
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
 	}
+
+	.review-image:hover .mask{
+		opacity: 1;
+	}
+
+	// .review_title {
+	// 	font-size: 20px;
+	// 	text-align: center;
+	// }
+
+	// .review_user_name {
+	// 	font-size: 15px;
+	// 	text-align: center;
+	// }
 }
 
 .user-show {

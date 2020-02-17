@@ -9,23 +9,28 @@
 	</div>
 	<div class="row">
 	<% @reviews.each do |review| %>
-		<div class="polaroid col-2">
-			<div class ="review-image">
+		<div class ="review-image">
 			<%= link_to user_review_path(review.id) do %>
 				<% if review.image_id.present? %>
-					<%= attachment_image_tag review, :image, :fill, 100, 200 %>
+					<%= attachment_image_tag review, :image, :fill, 250, 400 %>
 				<% else %>
-					<%= image_tag 'no_image.jpg', :size=>"100x200" %>
+					<%= image_tag 'no_image.jpg', :size=>"250x400" %>
 				<% end %>
+				<div class="mask">
+					<div class="caption">
+					<%= review.title %><br>
+					<%= review.user.nickname %>
+					</div>
+				</div>
 			<% end %>
-			</div><br>
-			<div class="review_title">
+		</div>
+
+			<!-- <div class="review_title">
 				<%= review.title %>
 			</div><br>
 			<div class="review_user_name">
 				<%= review.user.nickname %>
-			</div><br>
-		</div>
+			</div><br> -->
 	<% end %>
 	</div>
 </div>
