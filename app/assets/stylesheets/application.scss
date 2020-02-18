@@ -321,6 +321,30 @@ h1 {
 	}
 	.col-7 {
 		float: right;
+		h4 {
+			margin-top: 15px;
+		}
+	}
+	.field {
+		padding-top: 20px;
+	}
+	.submit {
+		padding-top: 40px;
+	}
+}
+
+.review-edit {
+	.edit_review {
+		width: 100%;
+	}
+	.col-5 {
+		float: left;
+	}
+	.col-7 {
+		float: right;
+		h4 {
+			margin-top: 15px;
+		}
 	}
 	.field {
 		padding-top: 20px;

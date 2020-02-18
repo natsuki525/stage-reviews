@@ -46,16 +46,36 @@ class User::ReviewsController < ApplicationController
 
  def edit
  	@review = Review.find(params[:id])
+ 	@Theaters = Theater.all
  end
 
  def update
- 	@review = Review.find(params[:id])
- 	if @review.update(review_params)
- 		redirect_to user_review_path(@review)
- 		flash[:notice_update] = "レビューが更新されました！"
- 	else
- 		render :edit
- 	end
+ 	case params[:selected_btn]
+ 		when  'been_theater'
+      		@review = Review.find(params[:id])
+      		@theaters = Theater.all
+      		@theater = Theater.find(params[:id])
+ 			@review.theater_name = Theater.find(params[:review][:theater]).name
+ 			if @review.update(review_params)
+ 				redirect_to user_review_path(@review)
+ 				# flach[:notice_new] = "レビューが投稿されました！"
+ 			else
+ 				render :edit
+ 			end
+
+		when 'new_theater'
+			@review = Review.find(params[:id])
+ 			if @review.update(review_params)
+ 				@theater = Theater.new
+ 				@theater.user_id = current_user.id
+ 				@theater.name = @review.theater_name
+ 				@theater.save
+ 				redirect_to user_review_path(@review)
+ 				# flach[:notice_new] = "レビューが投稿されました！"
+ 			else
+ 				render :edit
+ 			end
+ 		end
  end
 
  def destroy
@@ -75,5 +95,4 @@ class User::ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:user_id, :title, :body, :stage_date, :theater_id, :seat, :view_level, :satisfaction_level, :story_level, :stage_set_level, :costume_level, :image, :theater_name, :is_spoiler, :troupe_name, :created_at, :updated_at)
     end
-
 end
