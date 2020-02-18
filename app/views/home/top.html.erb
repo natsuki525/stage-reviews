@@ -1,7 +1,7 @@
 <div class="container top">
 	<% if user_signed_in? %>
         <dl class ="searchbox">
-        <%= search_form_for @search, url: user_reviews_path do |f| %>
+        <%= search_form_for @search, url: reviews_path do |f| %>
           <div class ="searching">
             <dt><%= f.search_field :title_or_troupe_name_cont ,placeholder: "作品名か劇団名で検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
           </div>
@@ -12,7 +12,7 @@
 
       <% else %>
         <dl class ="searchbox">
-        <%= search_form_for @search, url: user_reviews_path do |f| %>
+        <%= search_form_for @search, url: reviews_path do |f| %>
           <div class ="searching">
             <dt><%= f.search_field :title_or_troupe_name_cont ,placeholder: "作品名か劇団名で検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
           </div>
@@ -23,14 +23,14 @@
 		<h1>Reviews</h1>
 	</div> -->
 	<div class="row review-new-icon">
-		<%= link_to new_user_review_path do %>
+		<%= link_to new_review_path do %>
 			<i class="fas fa-edit" style="font-size: 80px; padding-bottom: 20px;"></i>
 		<% end %>
 	</div>
 	<div class="row">
 	<% @reviews.each do |review| %>
 		<div class ="review-image">
-			<%= link_to user_review_path(review.id) do %>
+			<%= link_to review_path(review.id) do %>
 				<% if review.image_id.present? %>
 					<%= attachment_image_tag review, :image, :fill, 250, 400 %>
 				<% else %>

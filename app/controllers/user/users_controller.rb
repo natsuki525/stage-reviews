@@ -3,7 +3,7 @@ class User::UsersController < ApplicationController
 
  def show
  	@user = User.find(params[:id])
-  @reviews = @user.reviews.page(params[:page]).per(10).order('created_at DESC')
+  @reviews = @user.reviews.page(params[:page]).per(5).order('created_at DESC')
   @theaters = @user.theaters
  end
 
@@ -14,7 +14,7 @@ class User::UsersController < ApplicationController
  def update
  	@user = User.find(params[:id])
  	if @user.update(user_params)
- 		redirect_to user_user_path(current_user)
+ 		redirect_to user_path(current_user)
  		flash[:notice_update] = "商品が更新されました!"
  	else
  		render :edit

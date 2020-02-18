@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   }
 
 
-  namespace :user do
+  scope module: :user do
     resources :users, only: [:show, :edit, :update, :destroy] do
       resources :theaters
       resources :favorites, only: [:index]

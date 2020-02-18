@@ -16,9 +16,7 @@
     	<%= form_for(@review, url: {controller: "reviews", action: "update"}) do |f| %>
     	<div class="col-5">
     		<%= f.attachment_field :image, placeholder: "画像選択", id: :review_image %>
-    		<% if @review.image.present? %>
-    			<%= attachment_image_tag @review, :image, :fill, 300, 400, id: :img_prev, size: "300x400" %>
-    		<% end %>
+    		<%= attachment_image_tag @review, :image, :fill, 300, 400, id: :img_prev, fallback: "no-image-review.png", size: "300x400" %>
     	</div>
 
     	<div class="col-7">

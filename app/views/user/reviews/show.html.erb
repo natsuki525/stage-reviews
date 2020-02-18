@@ -14,7 +14,7 @@
 			<h3>reviewed by</h3>
 			<div class="prof_image">
 				<% if user_signed_in? %>
-					<%= link_to user_user_path(@user) do %>
+					<%= link_to user_path(@user) do %>
 						<% if @user.image_id.present? %>
 							<%= attachment_image_tag @user, :image, :fill, 100, 100 %>
 						<% else %>
@@ -31,7 +31,7 @@
 			</div>
 			<div class="nickname">
 				<% if user_signed_in? %>
-					<%= link_to user_user_path(@user) do %>
+					<%= link_to user_path(@user) do %>
 						<%= @user.nickname %>
 					<% end %>
 				<% else %>
@@ -138,12 +138,12 @@
 			</p>
 			<div class="edit_btn">
 				<% if @review.user == current_user %>
-					<%= link_to "編集する", edit_user_review_path(@review), class:"btn btn-outline-primary" %>
+					<%= link_to "編集する", edit_review_path(@review), class:"btn btn-outline-primary" %>
 				<% end %>
 			</div>
 			<div class="destroy_btn">
 				<% if @review.user == current_user %>
-					<%= link_to "削除する", user_review_path(@review), method: :delete, class:"btn btn-outline-danger mb-4", data: { confirm: '削除しますか？' } %>
+					<%= link_to "削除する", review_path(@review), method: :delete, class:"btn btn-outline-danger mb-4", data: { confirm: '削除しますか？' } %>
 				<% end %>
 			</div>
 		</div>

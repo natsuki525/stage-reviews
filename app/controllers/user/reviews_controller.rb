@@ -57,7 +57,7 @@ class User::ReviewsController < ApplicationController
       		@theater = Theater.find(params[:id])
  			@review.theater_name = Theater.find(params[:review][:theater]).name
  			if @review.update(review_params)
- 				redirect_to user_review_path(@review)
+ 				redirect_to review_path(@review)
  				# flach[:notice_new] = "レビューが投稿されました！"
  			else
  				render :edit
@@ -70,7 +70,7 @@ class User::ReviewsController < ApplicationController
  				@theater.user_id = current_user.id
  				@theater.name = @review.theater_name
  				@theater.save
- 				redirect_to user_review_path(@review)
+ 				redirect_to review_path(@review)
  				# flach[:notice_new] = "レビューが投稿されました！"
  			else
  				render :edit
@@ -82,7 +82,7 @@ class User::ReviewsController < ApplicationController
  	@review = Review.find(params[:id])
  	if @review.user = current_user
  		@review.destroy
- 		redirect_to user_reviews_path
+ 		redirect_to reviews_path
  		# flash[:notice_destroy] = "レビューが削除されました。"
  	end
  end

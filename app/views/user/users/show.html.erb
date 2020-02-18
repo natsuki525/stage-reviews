@@ -10,15 +10,15 @@
 					<p>email: <%= @user.email %></p>
 					<div class="edit_btn">
 						<% if @user == current_user %>
-							<%= link_to "編集する", edit_user_user_path(current_user), class:"btn btn-outline-primary" %>
+							<%= link_to "編集する", edit_user_path(current_user), class:"btn btn-outline-primary" %>
 						<% end %>
 					</div>
 					<div class="follow_btn">
 						<% if @user != current_user %>
 							<% if @user.followed_by?(current_user) %>
-								<%= link_to "フォロー中", user_user_relationships_path(@user.id), method: :delete, class:"btn btn-outline-primary" %>
+								<%= link_to "フォロー中", user_relationships_path(@user.id), method: :delete, class:"btn btn-outline-primary" %>
 							<% else %>
-								<%= link_to "フォローする", user_user_relationships_path(@user.id), method: :post, class:"btn btn-outline-primary" %>
+								<%= link_to "フォローする", user_relationships_path(@user.id), method: :post, class:"btn btn-outline-primary" %>
 							<% end %>
 						<% end %>
 					</div>
@@ -27,28 +27,28 @@
 			<div class="row">
 					<div class="box">
 						いいね<br>
-						<%= link_to user_user_favorites_path(@user) do %>
+						<%= link_to user_favorites_path(@user) do %>
 							<i class="fas fa-heart"></i>
 							<%= @user.favorites.count %>
 						<% end %>
 					</div>
 					<div class="box">
 						劇場<br>
-						<%= link_to user_user_theaters_path(@user.id) do %>
+						<%= link_to user_theaters_path(@user.id) do %>
 							<i class="fas fa-synagogue"></i>
 							<%= @theaters.count %>
 						<% end %>
 					</div>
 					<div class="box">
 						フォロー中<br>
-						<%= link_to follows_user_user_path(@user) do %>
+						<%= link_to follows_user_path(@user) do %>
 							<i class="fas fa-address-book"></i>
 							<%= @user.followings.count %>
 						<% end %>
 					</div>
 					<div class="box">
 						フォロワー<br>
-						<%= link_to followers_user_user_path(@user) do %>
+						<%= link_to followers_user_path(@user) do %>
 							<i class="far fa-address-book"></i>
 							<%= @user.followers.count %>
 						<% end %>
@@ -57,11 +57,12 @@
 		</div>
 		<div class="col-6">
 			<div class="row">
-				<h3>投稿数：<%= @user.reviews.count %></h3>
-				<table class="table table-borderless">
+				<div class="tag">
+					<h3>投稿数：<%= @user.reviews.count %></h3>
+				</div>
+				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th></th>
 							<th>作品名</th>
 							<th>投稿日</th>
 						</tr>
@@ -69,9 +70,8 @@
 					<tbody>
 					<% @reviews.each do |review| %>
 						<tr>
-							<td></td>
 							<td>
-								<%= link_to user_review_path(review) do %>
+								<%= link_to review_path(review) do %>
 									<%= review.title %>
 								<% end %>
 							</td>
