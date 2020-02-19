@@ -8,8 +8,11 @@
 	<div class="row">
 		<div class="col-5" style="padding-left: 100px;">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no-image-review.png", :size=>"300x400" %>
-			<div id="favorites">
+			<div id="favorites" class="col-6">
 				<%= render 'user/favorites/favorites', review: @review %>
+			</div>
+			<div id="clips-<% @review.id %>" class="col-6">
+				<%= render 'user/clips/clips', review: @review %>
 			</div>
 			<h3>reviewed by</h3>
 			<div class="prof_image">

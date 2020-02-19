@@ -9,14 +9,14 @@ class User::ReviewsController < ApplicationController
  def create
  	case params[:selected_btn]
  		when  'been_theater'
-      		@review = Review.new(review_params)
+      @review = Review.new(review_params)
  			@review.user_id = current_user.id
  			@review.theater_name = Theater.find(params[:review][:theater]).name
  			if @review.save
  				redirect_to root_path
  				flash[:notice_review_new] = "レビューが投稿されました！"
- 			else @review.errors.any?
- 				render 'new'
+ 			else
+ 				render :new
  			end
 		when 'new_theater'
 			@review = Review.new(review_params)
@@ -28,8 +28,8 @@ class User::ReviewsController < ApplicationController
  				@theater.save
  				redirect_to root_path
         flash[:notice_review_new] = "レビューが投稿されました！"
- 			else @review.errors.any?
- 				render 'new'
+ 			else
+ 				render :new
  			end
  		end
 
@@ -61,7 +61,7 @@ class User::ReviewsController < ApplicationController
  				redirect_to review_path(@review)
  				flash[:notice_review_update] = "レビューが更新されました！"
  			else
- 				render 'edit'
+ 				render :edit
  			end
 
 		when 'new_theater'
@@ -74,7 +74,7 @@ class User::ReviewsController < ApplicationController
  				redirect_to review_path(@review)
  				flash[:notice_review_update] = "レビューが更新されました！"
  			else
- 				render 'edit'
+ 				render :edit
  			end
  		end
  end

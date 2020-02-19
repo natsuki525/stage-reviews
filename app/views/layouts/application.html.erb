@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StageReviews</title>
+    <title>StageLog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
@@ -14,7 +14,7 @@
     <header class="sticky-top">
       <nav class="navbar navbar-fixed-top　justify-content-center">
       <ul class="list-inline-item">
-          <li class="list-inline-item">
+          <!-- <li class="list-inline-item">
             <% if admin_signed_in? %>
               <%= link_to admin_root_path, id: "logo" do%>
                 <%= image_tag 'book2.png' %>
@@ -24,7 +24,7 @@
                 <%= image_tag 'book2.png' %>
               <% end %>
             <% end %>
-          </li>
+          </li> -->
         <% if user_signed_in? %>
           <li class="list-inline-item">
             <%= link_to root_path do %>

@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :theaters, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_reviews, through: :favorites, source: :review, dependent: :destroy
+  has_many :clips, dependent: :destroy
+  has_many :clip_reviews, through: :clips, source: :review, dependent: :destroy
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id, dependent: :destroy
   has_many :followings, through: :active_relationships, source: :follower, dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id, dependent: :destroy

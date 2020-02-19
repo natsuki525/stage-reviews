@@ -1,8 +1,6 @@
 <div class="container user-show">
+	<%= flash[:notice_user_update] %>
 	<div class="row">
-		<div class="flush">
-			<%= flash[:notice_user_update] %>
-		</div>
 		<div class="col-6">
 			<div class="row">
 				<div class="prof-image">
@@ -29,10 +27,17 @@
 			</div>
 			<div class="row">
 					<div class="box">
-						いいね<br>
+						Fav<br>
 						<%= link_to user_favorites_path(@user) do %>
 							<i class="fas fa-heart"></i>
 							<%= @user.favorites.count %>
+						<% end %>
+					</div>
+					<div class="box">
+						Clip<br>
+						<%= link_to user_clips_path(@user) do %>
+							<i class="fas fa-paperclip"></i>
+							<%= @user.clips.count %>
 						<% end %>
 					</div>
 					<div class="box">

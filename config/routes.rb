@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update, :destroy] do
       resources :theaters, only: [:index, :edit, :update]
       resources :favorites, only: [:index]
+      resources :clips, only: [:index]
       resource :relationships, only: [:create, :destroy]
       get :follows, on: :member
       get :followers, on: :member
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
     # resources :theaters
     resources :reviews do
       resource :favorites, only: [:create, :destroy]
+      resource :clips, only: [:create, :destroy]
     end
 
   end

@@ -3,7 +3,7 @@
 		<div class="fav">
 			<%= link_to "/reviews/#{review.id}/favorites", method: :delete, remote: true do %>
 				<i class="fas fa-heart" aria-hidden="true" style="color: #EC7986;"></i>
-				いいね
+				Fav
 				<%= review.favorites.count %>
 			<% end %>
 		</div>
@@ -11,7 +11,7 @@
 		<div class="fav">
 			<%= link_to "/reviews/#{review.id}/favorites", method: :post, remote: true do %>
       			<i class="fas fa-heart" aria-hidden="true" style="color: #FADBE1;"></i>
-      			いいね
+      			Fav
       			<%= review.favorites.count %>
     		<% end %>
 		</div>
