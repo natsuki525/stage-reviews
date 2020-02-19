@@ -19,6 +19,12 @@ class User < ApplicationRecord
   attachment :image
   accepts_nested_attributes_for :theaters
 
+  validates :email, presence: true, uniqueness: true
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。' }
+  validates :first_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。' }
+  validates :nickname, presence: true, format: {with: /\A[a-z0-9]+\z/, message: 'は英数字で入力して下さい。'}
   def followed_by?(user)
   	passive_relationships.find_by(following_id: user.id).present?
   end

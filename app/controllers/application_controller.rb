@@ -8,7 +8,7 @@ def after_sign_in_path_for(resource)
 			admin_root_path
 		when User
 			root_path
-			user_user_path(current_user)
+			user_path(current_user)
 	end
 end
 

@@ -20,7 +20,6 @@
  body {
  	color: #74645C;
  }
-
  .logo {
  	background-image: url(theater1.jpeg);
  	height: 300px;
@@ -40,12 +39,21 @@
  .jumbotron {
 	background-image: url(header-theater3.jpeg);
 	height: 300px;
-	padding: 0;
+	padding-top: 60px;
 	max-width: 100%;
 	background-position: top;
 	background-size: cover;
-	// border-radius: 50px;
-	margin: 0 auto;
+
+	.title-cover {
+		width: 400px;
+		height: 200px;
+		background-image: url(book.png);
+		background-color: rgba(225,225,225,0.5);
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 60px;
+		border-radius: 30px;
+	}
 }
 
 header {
@@ -156,6 +164,7 @@ h1 {
 		color: #C82136;
 	}
 }
+
 .top {
 	#review_title {
 		width: 300px;
@@ -189,7 +198,7 @@ h1 {
 
 	.review-image {
 		border-radius: 20px;
-		margin: 5px;
+		margin: 15px;
 		overflow: hidden;
 		position: relative;
 	}
@@ -217,15 +226,14 @@ h1 {
 		opacity: 1;
 	}
 
-	// .review_title {
-	// 	font-size: 20px;
-	// 	text-align: center;
-	// }
-
-	// .review_user_name {
-	// 	font-size: 15px;
-	// 	text-align: center;
-	// }
+	.top-review {
+		p{
+			margin: 0 auto;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			font-size: 20px;
+		}
+	}
 }
 
 .user-show {

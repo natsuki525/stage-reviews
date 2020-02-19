@@ -1,5 +1,5 @@
 class User::UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :follows, :followers]
+  before_action :authenticate_user!
 
  def show
  	@user = User.find(params[:id])
@@ -15,9 +15,9 @@ class User::UsersController < ApplicationController
  	@user = User.find(params[:id])
  	if @user.update(user_params)
  		redirect_to user_path(current_user)
- 		flash[:notice_update] = "商品が更新されました!"
+ 		flash[:notice_user_update] = "会員情報が更新されました!"
  	else
- 		render :edit
+ 		render 'edit'
  	end
  end
 

@@ -14,9 +14,9 @@ class User::ReviewsController < ApplicationController
  			@review.theater_name = Theater.find(params[:review][:theater]).name
  			if @review.save
  				redirect_to root_path
- 				# flach[:notice_new] = "レビューが投稿されました！"
- 			else
- 				render :new
+ 				flash[:notice_review_new] = "レビューが投稿されました！"
+ 			else @review.errors.any?
+ 				render 'new'
  			end
 		when 'new_theater'
 			@review = Review.new(review_params)
@@ -27,8 +27,9 @@ class User::ReviewsController < ApplicationController
  				@theater.name = @review.theater_name
  				@theater.save
  				redirect_to root_path
- 			else
- 				render :new
+        flash[:notice_review_new] = "レビューが投稿されました！"
+ 			else @review.errors.any?
+ 				render 'new'
  			end
  		end
 
@@ -58,9 +59,9 @@ class User::ReviewsController < ApplicationController
  			@review.theater_name = Theater.find(params[:review][:theater]).name
  			if @review.update(review_params)
  				redirect_to review_path(@review)
- 				# flach[:notice_new] = "レビューが投稿されました！"
+ 				flash[:notice_review_update] = "レビューが更新されました！"
  			else
- 				render :edit
+ 				render 'edit'
  			end
 
 		when 'new_theater'
@@ -71,9 +72,9 @@ class User::ReviewsController < ApplicationController
  				@theater.name = @review.theater_name
  				@theater.save
  				redirect_to review_path(@review)
- 				# flach[:notice_new] = "レビューが投稿されました！"
+ 				flash[:notice_review_update] = "レビューが更新されました！"
  			else
- 				render :edit
+ 				render 'edit'
  			end
  		end
  end
@@ -82,8 +83,8 @@ class User::ReviewsController < ApplicationController
  	@review = Review.find(params[:id])
  	if @review.user = current_user
  		@review.destroy
- 		redirect_to reviews_path
- 		# flash[:notice_destroy] = "レビューが削除されました。"
+ 		redirect_to root_path
+ 		flash[:notice_review_destroy] = "レビューが削除されました。"
  	end
  end
 

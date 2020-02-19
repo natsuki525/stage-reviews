@@ -4,6 +4,11 @@ class Review < ApplicationRecord
  attachment :image
  attr_accessor :theater
 
+ validates :title,  presence: true, length: { maximum: 50}
+ validates :body, presence: true, length: { maximum: 300}
+ validates :stage_date, presence: true
+ # validates :theater_name, presence: true
+
  def favorited_by(user)
  	favorites.where(user_id: user.id).exists?
  end

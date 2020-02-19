@@ -15,9 +15,9 @@ class User::TheatersController < ApplicationController
  	@theater = Theater.find(params[:id])
  	if @theater.update(theater_params)
  		redirect_to user_theaters_path(@user)
- 		flash[:notice_update] = "劇場名を更新しました！"
+ 		flash[:notice_theater_update] = "劇場名を更新しました！"
  	else
- 		render :edit
+ 		render 'edit'
  	end
  end
 
