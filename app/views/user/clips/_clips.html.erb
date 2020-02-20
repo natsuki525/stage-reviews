@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+	<% if Clip.find_by(user_id: current_user.id, review_id: review.id) %>
+		<div class="clip">
+			<%= link_to "/reviews/#{review.id}/clips", method: :delete, remote: true do %>
+				<i class="fas fa-paperclip" aria-hidden="true" style="color: #346CB5;"></i>
+				Clip
+				<%= review.clips.count %>
+			<% end %>
+		</div>
+	<% else %>
+		<div class="clip">
+			<%= link_to "/reviews/#{review.id}/clips", method: :post, remote: true do %>
+      			<i class="fas fa-paperclip" aria-hidden="true" style="color: #C1D2E9;"></i>
+      			Clip
+      			<%= review.clips.count %>
+    		<% end %>
+		</div>
+	<% end %>
+<% end %>

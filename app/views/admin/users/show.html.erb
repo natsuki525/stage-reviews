@@ -1,0 +1,41 @@
+<div class="container">
+	<h1>ユーザー詳細</h1>
+	<div class="flush">
+		<%= flash[:notice_edit] %>
+	</div>
+	<div class="row">
+		<table class = "table table-borderless">
+			<tr>
+				<th style="width:20%">顧客ID</th>
+				<td><%= @user.id %>
+					<div class = "customer-status text-white">
+						<% if @user.is_deleted? %>
+							<span class="bg-danger p-2 rounded">
+							退会済
+							</span>
+						<% else %>
+							<span class="bg-primary p-2 rounded">
+							有効会員
+							</span>
+						<% end %>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th>氏名</th><td><%= @user.last_name %> <%= @user.first_name %></td>
+			</tr>
+			<tr>
+				<th>フリガナ</th>	<td><%= @user.last_name_kana %> <%= @user.first_name_kana %></td>
+			</tr>
+			<tr>
+				<th>メールアドレス</th><td><%= @user.email %></td>
+			</tr>
+			<tr>
+				<th>表示名</th>	<td><%= @user.nickname %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="row">
+		<%= link_to "編集する" , edit_admin_user_path(@user.id),class: "btn btn-outline-primary" %>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+<div class = "container admin-user-edit">
+	<h1>会員編集</h1>
+
+<div class="error-box">
+	<% if @user.errors.any? %>
+         <h2><%= @user.errors.count %>件のエラーがあります</h2>
+            <ul>
+               <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+            </ul>
+    <% end %>
+</div>
+
+<div class ="user-edit">
+
+			<%= form_for(@user,url: {controler: "users", action: "update" }) do |f| %>
+					<table id = users-data-edit>
+
+			<tr>
+				<th style="width:30%">顧客ID</th>			<td><%= @user.id %></td>
+			</tr>
+			<tr>
+				<th>氏名</th>	<td><%=f.text_field :last_name,class:"form-control" %></td> <td><%=f.text_field :first_name,class:"form-control" %></td>
+			</tr>
+			<tr>
+				<th>フリガナ</th>			<td><%=f.text_field :last_name_kana,class:"form-control" %></td> <td><%=f.text_field :first_name_kana,class:"form-control" %></td>
+			</tr>
+			<tr>
+				<th>メールアドレス</th>	<td><%=f.email_field :email,class:"form-control" %></td>
+			</tr>
+			<tr>
+				<th>表示名</th>	<td><%=f.text_field :nickname,class:"form-control" %></td>
+			</tr>
+			<tr>
+				<th>会員ステータス</th>	<td><%= f.radio_button :is_deleted, :false %> 有効  <%= f.radio_button :is_deleted, :true %> 退会済 </td>
+			</tr>
+
+
+		</table>
+
+			<%= f.submit "更新" ,class:"btn btn-outline-primary"%>
+
+			<% end %>
+
+
+
+
+
+</div>
+</div>

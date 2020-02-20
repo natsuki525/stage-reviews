@@ -1,9 +1,9 @@
 class User::UsersController < ApplicationController
+  before_action :authenticate_user!
 
  def show
  	@user = User.find(params[:id])
-  @reviews = @user.reviews
-  @favorite_reviews = @user.favorite_reviews
+  @reviews = @user.reviews.page(params[:page]).per(5).order('created_at DESC')
   @theaters = @user.theaters
  end
 
@@ -14,21 +14,24 @@ class User::UsersController < ApplicationController
  def update
  	@user = User.find(params[:id])
  	if @user.update(user_params)
- 		redirect_to user_user_path(current_user)
- 		flash[:notice_update] = "商品が更新されました!"
+ 		redirect_to user_path(current_user)
+ 		flash[:notice_user_update] = "会員情報が更新されました!"
  	else
- 		render :edit
+ 		render 'edit'
  	end
  end
 
  def follows
     user = User.find(params[:id])
-    @users = user.followings
+    @users = user.followings.page(params[:page]).per(12)
   end
 
   def followers
     user = User.find(params[:id])
-    @users = user.followers
+    @users = user.followers.page(params[:page]).per(12)
+  end
+
+  def leave
   end
 
  private

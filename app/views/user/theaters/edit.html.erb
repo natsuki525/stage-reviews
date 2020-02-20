@@ -1,0 +1,27 @@
+<div class="container theater-edit">
+	<div class="row tag">
+		<h1>劇場名編集</h1>
+	</div>
+	<div class="row errors">
+	<% if @theater.errors.any? %>
+        <div id="error_explanation">
+          	<h2><%= pluralize(@theater.errors.count, "error") %> prohibited this user from being saved:</h2>
+          	<ul>
+          		<% @theater.errors.full_messages.each do |msg| %>
+            		<li><%= msg %></li>
+          		<% end %>
+          	</ul>
+        </div>
+    <% end %>
+    </div>
+    <%= form_for(@theater, url: {controller: "theaters", action: "update"}) do |f| %>
+	<div class="row">
+		<div class="col-7">
+			<%= f.text_field :name,class:"form-control" %>
+		</div>
+		<div class="submit">
+			<%= f.submit "変更", class:"btn btn-outline-primary" %>
+		</div>
+	</div>
+	<% end %>
+</div>

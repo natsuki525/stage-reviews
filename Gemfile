@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
+gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -39,6 +40,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~>3.7'
+  gem 'factory_bot_rails', '~>4.11'
 end
 
 group :development do
@@ -48,6 +51,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'i18n_generators'
 end
 
 group :test do
@@ -69,7 +73,6 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
 gem 'bootstrap', '~> 4.2.1'
-gem 'jquery-rails'
 
 #デバック
 gem 'pry-rails'
@@ -78,3 +81,12 @@ gem 'pry-rails'
 gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails'
 gem 'font-awesome-rails'
+
+#検索
+gem 'ransack'
+
+#デプロイ
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

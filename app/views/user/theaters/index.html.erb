@@ -1,11 +1,17 @@
-<div class="container">
+<div class="container theater-index">
+	<div class ="row tag">
+		<h1>劇場</h1>
+	</div>
+	<div class="flush">
+		<%= flash[:notice_theater_update] %>
+	</div>
 	<div class="row">
-	<h1>劇場一覧</h1>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<td>id</td>
 					<td>劇場名</td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -13,9 +19,15 @@
 				<tr>
 					<td><%= theater.id %></td>
 					<td><%= theater.name %></td>
+					<td>
+						<% if @user == current_user %>
+							<%= link_to "編集する", edit_user_theater_path(@user, theater.id), class:"btn btn-outline-primary" %>
+						<% end %>
+					</td>
 				</tr>
 			<% end %>
 			</tbody>
 		</table>
+		<%= paginate @theaters, class: "paginate" %>
 	</div>
 </div>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get "/home/about", to:'home#about'
+  get 'user/users/leave', to:'user/users#leave'
 
   devise_for :admins, controllers: {
   	sessions: 'devise/admin/sessions',
@@ -15,18 +16,26 @@ Rails.application.routes.draw do
   }
 
 
-  namespace :user do
+  scope module: :user do
+    resources :users, only: [:show, :edit, :update, :destroy] do
+      resources :theaters, only: [:index, :edit, :update]
+      resources :favorites, only: [:index]
+      resources :clips, only: [:index]
+      resource :relationships, only: [:create, :destroy]
+      get :follows, on: :member
+      get :followers, on: :member
+    end
+    # resources :theaters
+    resources :reviews do
+      resource :favorites, only: [:create, :destroy]
+      resource :clips, only: [:create, :destroy]
+    end
 
-   resources :users, only: [:show, :edit, :update, :destroy] do
-    resource :relationships, only: [:create, :destroy]
-    get :follows, on: :member
-    get :followers, on: :member
   end
-   resources :theaters, except: [:show]
-   resources :reviews do
-     resource :favorites, only: [:create, :destroy]
-   end
 
+  namespace :admin do
+    root 'users#index'
+    resources :users, only: [:index, :show, :edit, :update]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

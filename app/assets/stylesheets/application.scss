@@ -17,26 +17,81 @@
  @import "font-awesome";
  @import "tempusdominus-bootstrap-4.css";
 
+ body {
+ 	color: #74645C;
+ }
+ .logo {
+ 	background-image: url(theater1.jpeg);
+ 	height: 300px;
+ 	width: 650px;
+ 	margin: 0 auto;
+ 	background-size: cover;
+ 	text-align: center;
+ 	padding-top: 50px;
+ 	margin-top: 50px;
+ 	h1{
+ 		font-family: "Nikukyu";
+ 		font-size: 50px;
+ 		color: #52556E
+ 	}
+ }
+
  .jumbotron {
-	background-image: url(theater1.jpeg);
-	height: 600px;
-	padding: 0;
-	max-width: 100%;
-	background-position: top;
+	background-image: url(computer.jpg);
+	height: 400px;
+	padding-top: 60px;
+	width: 100%;
+	background-position: center top;
 	background-size: cover;
-	// border-radius: 50px;
-	margin: 0 auto;
+
+	.title-cover {
+		width: 400px;
+		height: 200px;
+		background-image: url(book3.png);
+		background-color: rgba(225,225,225,0.5);
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 60px;
+		border-radius: 30px;
+	}
 }
 
-body {
-	background-color: #EDE795;
+header {
+	background-color: rgba(225,225,225,0.9);
+}
+
+nav {
+	text-align: center;
+	p {
+		font-size: 25px;
+		font-family: 'Vollkorn', serif;
+		}
+
+	ul {
+		width: 600px;
+		margin: 0 auto;
+		a{
+			text-decoration: none;
+			color: #4E4449;
+			transition:.4s;
+
+			&:hover{
+						color:#4E4449;
+						transition:.4s;
+					}
+		}
+	li {
+		padding-right: 20px;
+	}
+	}
 }
 
 .container {
 	// background-color: #EEF2EF;
 	border-radius: 50px;
-	height: 1000px;
+	// height: 1000px;
 	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 h1 {
@@ -45,7 +100,201 @@ h1 {
 	margin: 0 auto;
 	font-family: 'Hiragino Kaku Gothic'
 }
+
+.about {
+	i {
+		margin-bottom: 80px;
+	}
+	h5 {
+		font-family: "游ゴシック体";
+	}
+	.box1 {
+		background-color: #F5F0D6;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 50px;
+		margin-left: 90px;
+		color: #C82136;
+	}
+	.box2 {
+		background-color: #B5D569;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 50px;
+		margin: 0 50px;
+		color: #C82136;
+	}
+	.box3 {
+		background-color: #B0DBD4;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 50px;
+		color: #C82136;
+	}
+	.box4 {
+		background-color: #87BFC1;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin-left: 90px;
+		color: #C82136;
+	}
+	.box5 {
+		background-color: #BEB098;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		margin: 0 50px;
+		color: #C82136;
+	}
+	.box6 {
+		background-color: #EDE795;
+		width: 300px;
+  		height: 300px;
+		text-align: center;
+		padding-top: 20px;
+		color: #C82136;
+	}
+}
+
+
+
 .top {
+	#review_title {
+		width: 300px;
+		border-radius: 5px;
+		margin: 0 auto;
+	}
+	.search-btn {
+		margin-left: 10px;
+		border-radius: 5px;
+	}
+	.review-new-icon {
+		position: fixed;
+		right: 100px;
+		top: 400px;
+	}
+
+	i {
+		font-size: 50px;
+		color: #74645C;
+	}
+	i:hover {
+		color: #BEB098;
+	}
+
+	// .polaroid {
+	// 	background-color: #F4F3F6;
+	// 	margin: 15px;
+	// 	padding: 20px, 0, 0, auto;
+	// 	width: 200px;
+	// 	height: 400px;
+	// }
+
+	.review-image {
+		border-radius: 20px;
+		margin: 15px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.review-image .caption {
+		font-size: 17px;
+		text-align: center;
+		padding-top: 150px;
+		color: #FFF;
+	}
+
+	.review-image .mask {
+		width: 100%;
+		height: 100%;
+		position: absolute;	/* 絶対位置指定 */
+		top: 0;
+		left: 0;
+		opacity: 0;	/* マスクを表示しない */
+		background-color: rgba(0,0,0,0.5);	/* マスクは半透明 */
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+	}
+
+	.review-image:hover .mask{
+		opacity: 1;
+	}
+
+	.top-review {
+		p{
+			margin: 0 auto;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			font-size: 20px;
+		}
+	}
+}
+
+.user-show {
+	.prof {
+		padding: 30px;
+	}
+	.box {
+		a{
+			text-decoration: none;
+			color: #87BFC1;
+
+			&:hover{
+						color:#B0DBD4;
+					}
+		}
+		margin-top: 50px;
+		padding-top: 20px;
+		border: 1px solid;
+		width:100px;
+		height: 100px;
+		text-align: center;
+		i {
+			font-size:40px;
+		}
+	}
+	td {
+		a {
+			text-decoration: none;
+			color: #74645C;
+
+			&:hover{
+						color:#BEB098;
+					}
+		}
+	}
+	.tag {
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h3 {
+    		margin: 0;
+    		padding: 0;
+    	}
+	}
+
+}
+
+.review-index {
+	#review_title {
+		width: 300px;
+		border-radius: 5px;
+	}
+	.search-btn {
+		margin-left: 10px;
+		border-radius: 5px;
+	}
 	.review-new-icon {
 		padding-left: 1000px;
 	}
@@ -58,42 +307,199 @@ h1 {
 		color: #BEB098;
 	}
 
-	.polaroid {
-		background-color: #F4F3F6;
-		margin: 15px;
-		padding: 20px, 0, 0, auto;
-		width: 200px;
-		height: 400px;
-	}
+	// .polaroid {
+	// 	background-color: #F4F3F6;
+	// 	margin: 15px;
+	// 	padding: 20px, 0, 0, auto;
+	// 	width: 200px;
+	// 	height: 400px;
+	// }
 
 	.review-image {
-		width: 100px;
-		height: 200px;
-		margin: 15px auto;
+		border-radius: 20px;
+		margin: 5px;
+		overflow: hidden;
+		position: relative;
 	}
 
-	.review_title {
-		font-size: 20px;
+	.review-image .caption {
+		font-size: 17px;
 		text-align: center;
+		padding-top: 150px;
+		color: #FFF;
 	}
 
-	.review_user_name {
-		font-size: 15px;
-		text-align: center;
+	.review-image .mask {
+		width: 100%;
+		height: 100%;
+		position: absolute;	/* 絶対位置指定 */
+		top: 0;
+		left: 0;
+		opacity: 0;	/* マスクを表示しない */
+		background-color: rgba(0,0,0,0.5);	/* マスクは半透明 */
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+	}
+
+	.review-image:hover .mask{
+		opacity: 1;
 	}
 }
 
-.user-show {
-	.prof {
-		padding: 30px;
+.review-show {
+
+	h1 {
+		margin-bottom: 15px;
 	}
-	.status {
-		padding-top: 50px;
+
+	.fav {
+		a{
+			text-decoration: none;
+			color: #EC7986;
+
+			&:hover{
+						color:#EC7986;
+					}
+		}
+	}
+
+	.clip {
+		a{
+			text-decoration: none;
+			color: #346CB5;
+
+			&:hover{
+						color:#346CB5;
+					}
+		}
+	}
+
+	i {
+		font-size: 30px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+	}
+	.nickname {
+		padding-top: 10px;
+		font-size: 20px;
+		a {
+			text-decoration: none;
+			color: #74645C;
+
+			&:hover{
+				color:#BEB098;
+			}
+		}
+	}
+	span {
+		font-size: 20px;
+		.star {
+			color: #F2B922;
+		}
+	}
+
+	.tag {
+		width: 130px;
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h3 {
+    		margin: 0;
+    		padding: 0;
+    	}
+	}
+	/*全体*/
+	.hidden_box {
+    	margin: 2em 0;/*前後の余白*/
+    	padding: 0;
+	}
+
+	/*ボタン装飾*/
+	.hidden_box label {
+    	padding: 15px;
+    	font-weight: bold;
+    	border: solid 2px black;
+    	cursor :pointer;
+	}
+
+	/*ボタンホバー時*/
+	.hidden_box label:hover {
+    	background: #efefef;
+	}
+
+	/*チェックは見えなくする*/
+	.hidden_box input {
+    	display: none;
+	}
+
+	/*中身を非表示にしておく*/
+	.hidden_box .hidden_show {
+    	height: 0;
+    	padding: 0;
+    	overflow: hidden;
+    	opacity: 0;
+    	transition: 0.8s;
+	}
+
+	/*クリックで中身表示*/
+	.hidden_box input:checked ~ .hidden_show {
+   		padding: 10px 0;
+    	height: auto;
+    	opacity: 1;
+	}
+
+	.edit_btn {
+		margin-bottom: 20px;
 	}
 }
 
 .review-new {
 	.new_review {
+		width: 100%;
+	}
+	.col-5 {
+		float: left;
+	}
+	.col-7 {
+		float: right;
+		h4 {
+			margin-top: 15px;
+		}
+	}
+	.field {
+		padding-top: 20px;
+	}
+	.submit {
+		padding-top: 40px;
+	}
+}
+
+.review-edit {
+	.edit_review {
+		width: 100%;
+	}
+	.col-5 {
+		float: left;
+	}
+	.col-7 {
+		float: right;
+		h4 {
+			margin-top: 15px;
+		}
+	}
+	.field {
+		padding-top: 20px;
+	}
+	.submit {
+		padding-top: 40px;
+	}
+}
+
+.user-edit {
+	.edit_user {
 		width: 100%;
 	}
 	.col-5 {
@@ -108,4 +514,234 @@ h1 {
 	.submit {
 		padding-top: 40px;
 	}
+}
+
+.user-followers {
+	.tag {
+		width: 230px;
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h1 {
+    		margin: 0;
+    		padding: 0;
+    		}
+    	}
+	.polaroid {
+		background-color: #F4F3F6;
+		margin: 15px;
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left:  20px;
+	}
+
+	.image {
+		width: 200px;
+		height: 200px;
+		padding: 0;
+	}
+
+	.nickname {
+		color: #74645C;
+		font-family: 'Caveat', cursive;
+		font-size: 30px;
+		text-align: center;
+	}
+}
+
+.user-follows {
+	.tag {
+		width: 230px;
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h1 {
+    		margin: 0;
+    		padding: 0;
+    		}
+    	}
+	.polaroid {
+		background-color: #F4F3F6;
+		margin: 15px;
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left:  20px;
+	}
+
+	.image {
+		width: 200px;
+		height: 200px;
+		padding: 0;
+	}
+
+	.nickname {
+		color: #74645C;
+		font-family: 'Caveat', cursive;
+		font-size: 30px;
+		text-align: center;
+	}
+}
+
+.user-leave {
+	.row {
+		text-align: center;
+	}
+}
+
+.favorite-index {
+	.tag {
+		width: 160px;
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h1 {
+    		margin: 0;
+    		padding: 0;
+    		}
+    	}
+	.col-4 {
+		border: 3px solid #87BFC1;
+		width: 400px;
+		height: 230px;
+		margin-bottom: 30px;
+
+
+		.col-5 {
+			float: left;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0;
+		}
+		.col-7 {
+			p {
+				span {
+					font-size: 20px;
+					color: #565599;
+				}
+			}
+			float: right;
+			padding: 0;
+			font-size: 13px;
+			#favorites {
+				position: absolute;
+				bottom: 2px;
+				right: 2px;
+			}
+		}
+
+	}
+}
+
+.clip-index {
+	.tag {
+		width: 160px;
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h1 {
+    		margin: 0;
+    		padding: 0;
+    		}
+    	}
+	.col-4 {
+		border: 3px solid #87BFC1;
+		width: 400px;
+		height: 230px;
+		margin-bottom: 30px;
+
+
+		.col-5 {
+			float: left;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0;
+		}
+		.col-7 {
+			p {
+				span {
+					font-size: 20px;
+					color: #565599;
+				}
+			}
+			float: right;
+			padding: 0;
+			font-size: 13px;
+			#favorites {
+				position: absolute;
+				bottom: 2px;
+				right: 2px;
+			}
+		}
+
+	}
+}
+
+.theater-index {
+	.tag {
+		width: 140px;
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h1 {
+    		margin: 0;
+    		padding: 0;
+    		}
+    	}
+}
+
+.theater-edit {
+	.tag {
+		width: 250px;
+		padding: 0.2em 0.5em;
+    	margin: 2em 0;
+   		background: #F5F0D6;
+    	box-shadow: 0px 0px 0px 10px #F5F0D6;
+    	border: dashed 2px #BEB098;
+    	h1 {
+    		margin: 0;
+    		padding: 0;
+    		}
+    	}
+}
+
+.pagination {
+	a {
+		text-decoration: none;
+		color: #74645C;
+		&:hover{
+			color:#BEB098;
+		}
+	}
+	span {
+		border: 1px solid;
+		padding: 5px;
+		margin: 5px;
+		a{
+			span{
+				border: none;
+			}
+		}
+	}
+}
+
+footer {
+	.container {
+		height: 100px;
+	}
+	background-image: url(footer.jpeg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }

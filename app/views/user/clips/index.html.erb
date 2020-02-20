@@ -1,0 +1,73 @@
+<div class="container clip-index">
+	<div class="row tag">
+		<h1>Clip</h1>
+	</div>
+	<div class="row">
+		<% @clips.each do |clip| %>
+		<% review = Review.find_by(id: clip.review_id) %>
+		<div class="col-4">
+				<div class="col-5">
+					<%= link_to review_path(review) do %>
+						<%= attachment_image_tag review, :image, :fill, 130, 223, fallback: "no-image-review.png", size: "130x223" %>
+					<% end %>
+				</div>
+				<div class="col-7">
+					<p><span>「<%= review.title %>」</span></p>
+					<p>【満足度】
+						<% if review.satisfaction_level == 1 %>
+							★
+						<% elsif review.satisfaction_level == 2 %>
+							★★
+						<% elsif review.satisfaction_level == 3 %>
+							★★★
+						<% elsif review.satisfaction_level == 4 %>
+							★★★★
+						<% else %>
+							★★★★★
+						<% end %>
+					</p>
+					<p>【ストーリー性】
+						<% if review.story_level == 1 %>
+							★
+						<% elsif review.story_level == 2 %>
+							★★
+						<% elsif review.story_level == 3 %>
+							★★★
+						<% elsif review.story_level == 4 %>
+							★★★★
+						<% else %>
+							★★★★★
+						<% end %>
+					</p>
+					<p>【舞台セット】
+						<% if review.stage_set_level == 1 %>
+							★
+						<% elsif review.stage_set_level == 2 %>
+							★★
+						<% elsif review.stage_set_level == 3 %>
+							★★★
+						<% elsif review.stage_set_level == 4 %>
+							★★★★
+						<% else %>
+							★★★★★
+						<% end %>
+					</p>
+					<p>【衣装】
+						<% if review.costume_level == 1 %>
+							★
+						<% elsif review.costume_level == 2 %>
+							★★
+						<% elsif review.costume_level == 3 %>
+							★★★
+						<% elsif review.costume_level == 4 %>
+							★★★★
+						<% else %>
+							★★★★★
+						<% end %>
+					</p>
+				</div>
+		</div>
+		<% end %>
+	</div>
+	<%= paginate @clips, class: "paginate" %>
+</div>

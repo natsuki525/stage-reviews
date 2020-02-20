@@ -1,24 +1,54 @@
 <div class="container review-index">
-	<h1>レビュー一覧</h1>
+	<% if user_signed_in? %>
+        <dl class ="searchbox">
+        <%= search_form_for @search, url: reviews_path do |f| %>
+          <div class ="searching">
+            <dt><%= f.search_field :title_or_troupe_name_cont ,placeholder: "作品名か劇団名で検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
+          </div>
+        <% end %>
+        </dl>
+
+      <% elsif admin_signed_in? %>
+
+      <% else %>
+        <dl class ="searchbox">
+        <%= search_form_for @search, url: reviews_path do |f| %>
+          <div class ="searching">
+            <dt><%= f.search_field :title_or_troupe_name_cont ,placeholder: "作品名か劇団名で検索", id: :review_title %><%= f.submit ("search") , class: 'search-btn' %></dt>
+          </div>
+        <% end %>
+        </dl>
+      <% end %>
+	<h1>検索結果</h1>
 	<div class="row">
-	<% @reviews.each do |review| %>
-		<div class="col-2">
-			<div class ="review-image">
-			<%= link_to user_review_path(review.id) do %>
+		<div class="col-10">
+			<h4><%= "全#{@search_reviews.count}件" %></h4>
+		</div>
+	</div>
+	<div class="row">
+	<% @search_reviews.each do |review| %>
+		<div class ="review-image">
+			<%= link_to review_path(review.id) do %>
 				<% if review.image_id.present? %>
-					<%= attachment_image_tag review, :image, :fill, 200, 300 %>
+					<%= attachment_image_tag review, :image, :fill, 250, 400 %>
 				<% else %>
-					<%= image_tag 'no_image.jpg', :size=>"200x300" %>
+					<%= image_tag 'no-image-review.png', :size=>"250x400" %>
 				<% end %>
+				<div class="mask">
+					<div class="caption">
+					<%= review.title %><br>
+					<%= review.user.nickname %>
+					</div>
+				</div>
 			<% end %>
-			</div><br>
-			<div class="review_title">
+		</div>
+
+			<!-- <div class="review_title">
 				<%= review.title %>
 			</div><br>
 			<div class="review_user_name">
 				<%= review.user.nickname %>
-			</div><br>
-		</div>
+			</div><br> -->
 	<% end %>
 	</div>
 </div>

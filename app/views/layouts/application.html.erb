@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StageReviews</title>
+    <title>StageLog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/543b872ac6.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top">
+    <header class="sticky-top">
+      <nav class="navbar navbar-fixed-top　justify-content-center">
       <ul class="list-inline-item">
+          <!-- <li class="list-inline-item">
+            <% if admin_signed_in? %>
+              <%= link_to admin_root_path, id: "logo" do%>
+                <%= image_tag 'book2.png' %>
+              <% end %>
+            <% else %>
+              <%= link_to root_path, id: "logo" do%>
+                <%= image_tag 'book2.png' %>
+              <% end %>
+            <% end %>
+          </li> -->
         <% if user_signed_in? %>
           <li class="list-inline-item">
             <%= link_to root_path do %>
@@ -25,12 +37,23 @@
             <% end %>
           </li>
           <li class="list-inline-item">
-            <%= link_to user_user_path(current_user) do %>
+            <%= link_to user_path(current_user) do %>
               <p>MyPage</p>
             <% end %>
           </li>
           <li class="list-inline-item">
             <%= link_to destroy_user_session_path, method: :delete do %>
+              <p>Logout</p>
+            <% end %>
+          </li>
+        <% elsif admin_signed_in? %>
+          <li class="list-inline-item">
+            <%= link_to admin_root_path do %>
+              <p>Home</p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to destroy_admin_session_path, method: :delete do %>
               <p>Logout</p>
             <% end %>
           </li>
@@ -50,10 +73,26 @@
               <p>Login</p>
             <% end %>
           </li>
+          <li class="list-inline-item">
+            <%= link_to new_admin_session_path do %>
+              <p>管理者はこちら</p>
+            <% end %>
+          </li>
         <% end %>
       </ul>
+      </nav>
     </header>
-    <div class ="jumbotron jumbotron-fluid"></div>
+    <!-- <div class="logo">
+      <h1>ステージレポ</h1>
+    </div> -->
+    <div class ="jumbotron jumbotron-fluid">
+      <div class="title-cover"></div>
+    </div>
     <%= yield %>
+    <footer>
+      <div class="container">
+          <h1 class="text-center"></h1>
+        </div>
+    </footer>
   </body>
 </html>
