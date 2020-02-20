@@ -84,3 +84,9 @@ gem 'font-awesome-rails'
 
 #検索
 gem 'ransack'
+
+#デプロイ
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
