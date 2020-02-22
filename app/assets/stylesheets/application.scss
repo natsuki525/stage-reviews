@@ -17,24 +17,24 @@
  @import "font-awesome";
  @import "tempusdominus-bootstrap-4.css";
 
- body {
- 	color: #74645C;
- }
- .logo {
- 	background-image: url(theater1.jpeg);
- 	height: 300px;
- 	width: 650px;
- 	margin: 0 auto;
- 	background-size: cover;
- 	text-align: center;
- 	padding-top: 50px;
- 	margin-top: 50px;
- 	h1{
- 		font-family: "Nikukyu";
- 		font-size: 50px;
- 		color: #52556E
- 	}
- }
+ // body {
+ // 	color: #74645C;
+ // }
+ // .logo {
+ // 	background-image: url(theater1.jpeg);
+ // 	height: 300px;
+ // 	width: 650px;
+ // 	margin: 0 auto;
+ // 	background-size: cover;
+ // 	text-align: center;
+ // 	padding-top: 50px;
+ // 	margin-top: 50px;
+ // 	h1{
+ // 		font-family: "Nikukyu";
+ // 		font-size: 50px;
+ // 		color: #52556E
+ // 	}
+ // }
 
  .jumbotron {
 	background-image: url(computer.jpg);
@@ -43,6 +43,7 @@
 	width: 100%;
 	background-position: center top;
 	background-size: cover;
+	margin-bottom: 0;
 
 	.title-cover {
 		width: 400px;
@@ -68,7 +69,7 @@ nav {
 		}
 
 	ul {
-		width: 600px;
+		width: 100%;
 		margin: 0 auto;
 		a{
 			text-decoration: none;
@@ -82,6 +83,15 @@ nav {
 		}
 	li {
 		padding-right: 20px;
+	}
+	.owner {
+		position: absolute;
+		top: 0px;
+		right: 10px;
+		list-style: none;
+		p {
+			font-size: 15px;
+		}
 	}
 	}
 }
@@ -103,65 +113,74 @@ h1 {
 
 .about {
 	i {
-		margin-bottom: 80px;
+		margin-bottom: 20px;
+		color: #E84566;
 	}
 	h5 {
 		font-family: "游ゴシック体";
+		font-weight: bold;
+		margin-bottom: 20px;
 	}
 	.box1 {
-		background-color: #F5F0D6;
+		background-color: #F5A500;
 		width: 300px;
   		height: 300px;
 		text-align: center;
 		padding-top: 20px;
 		margin-bottom: 50px;
 		margin-left: 90px;
-		color: #C82136;
+		color: black;
+		border-radius: 20px;
 	}
 	.box2 {
-		background-color: #B5D569;
+		background-color: #92CB97;
 		width: 300px;
   		height: 300px;
 		text-align: center;
 		padding-top: 20px;
 		margin-bottom: 50px;
 		margin: 0 50px;
-		color: #C82136;
+		color: black;
+		border-radius: 20px;
 	}
 	.box3 {
-		background-color: #B0DBD4;
+		background-color: #6EC7E2;
 		width: 300px;
   		height: 300px;
 		text-align: center;
 		padding-top: 20px;
 		margin-bottom: 50px;
-		color: #C82136;
+		color: black;
+		border-radius: 20px;
 	}
 	.box4 {
-		background-color: #87BFC1;
+		background-color: #F3ADCB;
 		width: 300px;
   		height: 300px;
 		text-align: center;
 		padding-top: 20px;
 		margin-left: 90px;
-		color: #C82136;
+		color: black;
+		border-radius: 20px;
 	}
 	.box5 {
-		background-color: #BEB098;
+		background-color: #3B83C4;
 		width: 300px;
   		height: 300px;
 		text-align: center;
 		padding-top: 20px;
 		margin: 0 50px;
-		color: #C82136;
+		color: black;
+		border-radius: 20px;
 	}
 	.box6 {
-		background-color: #EDE795;
+		background-color: #F9E900;
 		width: 300px;
   		height: 300px;
 		text-align: center;
 		padding-top: 20px;
-		color: #C82136;
+		color: black;
+		border-radius: 20px;
 	}
 }
 
@@ -180,7 +199,7 @@ h1 {
 	.review-new-icon {
 		position: fixed;
 		right: 100px;
-		top: 400px;
+		top: 450px;
 	}
 
 	i {
@@ -275,9 +294,10 @@ h1 {
 	.tag {
 		padding: 0.2em 0.5em;
     	margin: 2em 0;
-   		background: #F5F0D6;
-    	box-shadow: 0px 0px 0px 10px #F5F0D6;
-    	border: dashed 2px #BEB098;
+   		background: #00426D;
+   		color: #FFF;
+    	box-shadow: 0px 0px 0px 10px #00426D;
+    	border: dashed 2px #FFF;
     	h3 {
     		margin: 0;
     		padding: 0;
@@ -403,9 +423,10 @@ h1 {
 		width: 130px;
 		padding: 0.2em 0.5em;
     	margin: 2em 0;
-   		background: #F5F0D6;
-    	box-shadow: 0px 0px 0px 10px #F5F0D6;
-    	border: dashed 2px #BEB098;
+   		background: #00426D;
+   		color: #FFF;
+    	box-shadow: 0px 0px 0px 10px #00426D;
+    	border: dashed 2px #FFF;
     	h3 {
     		margin: 0;
     		padding: 0;
@@ -521,12 +542,13 @@ h1 {
 		width: 230px;
 		padding: 0.2em 0.5em;
     	margin: 2em 0;
-   		background: #F5F0D6;
-    	box-shadow: 0px 0px 0px 10px #F5F0D6;
-    	border: dashed 2px #BEB098;
+   		background: #00426D;
+    	box-shadow: 0px 0px 0px 10px #00426D;
+    	border: dashed 2px #FFF;
     	h1 {
     		margin: 0;
     		padding: 0;
+    		color: #FFF;
     		}
     	}
 	.polaroid {
@@ -556,12 +578,13 @@ h1 {
 		width: 230px;
 		padding: 0.2em 0.5em;
     	margin: 2em 0;
-   		background: #F5F0D6;
-    	box-shadow: 0px 0px 0px 10px #F5F0D6;
-    	border: dashed 2px #BEB098;
+   		background: #00426D;
+    	box-shadow: 0px 0px 0px 10px #00426D;
+    	border: dashed 2px #FFF;
     	h1 {
     		margin: 0;
     		padding: 0;
+    		color: #FFF;
     		}
     	}
 	.polaroid {
@@ -597,12 +620,13 @@ h1 {
 		width: 160px;
 		padding: 0.2em 0.5em;
     	margin: 2em 0;
-   		background: #F5F0D6;
-    	box-shadow: 0px 0px 0px 10px #F5F0D6;
-    	border: dashed 2px #BEB098;
+   		background: #00426D;
+    	box-shadow: 0px 0px 0px 10px #00426D;
+    	border: dashed 2px #FFF;
     	h1 {
     		margin: 0;
     		padding: 0;
+    		color: #FFF;
     		}
     	}
 	.col-4 {
@@ -641,15 +665,16 @@ h1 {
 
 .clip-index {
 	.tag {
-		width: 160px;
+		width: 130px;
 		padding: 0.2em 0.5em;
     	margin: 2em 0;
-   		background: #F5F0D6;
-    	box-shadow: 0px 0px 0px 10px #F5F0D6;
-    	border: dashed 2px #BEB098;
+   		background: #00426D;
+    	box-shadow: 0px 0px 0px 10px #00426D;
+    	border: dashed 2px #FFF;
     	h1 {
     		margin: 0;
     		padding: 0;
+    		color: #FFF;
     		}
     	}
 	.col-4 {
@@ -688,13 +713,14 @@ h1 {
 
 .theater-index {
 	.tag {
-		width: 140px;
+		width: 170px;
 		padding: 0.2em 0.5em;
     	margin: 2em 0;
-   		background: #F5F0D6;
-    	box-shadow: 0px 0px 0px 10px #F5F0D6;
-    	border: dashed 2px #BEB098;
+   		background: #00426D;
+    	box-shadow: 0px 0px 0px 10px #00426D;
+    	border: dashed 2px #FFF;
     	h1 {
+    		color: #FFF;
     		margin: 0;
     		padding: 0;
     		}
