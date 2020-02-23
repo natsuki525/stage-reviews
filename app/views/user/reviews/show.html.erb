@@ -6,7 +6,7 @@
 		<h1>「　<%= @review.title %>　」</h1>
 	</div>
 	<div class="row">
-		<div class="col-5" style="padding-left: 100px;">
+		<div class="col-6" style="padding-left: 100px;">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no-image-review.png", :size=>"300x400" %>
 			<div id="favorites" class="col-6">
 				<%= render 'user/favorites/favorites', review: @review %>
@@ -42,7 +42,7 @@
 				<% end %>
 			</div>
 		</div>
-		<div class="col-7">
+		<div class="col-6">
 			<p><span>【観劇日】</span><%= @review.stage_date %></p>
 			<% if @review.troupe_name.present? %>
 				<p><span>【劇団名】</span><%= @review.troupe_name %></p>

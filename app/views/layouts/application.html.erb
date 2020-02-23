@@ -73,7 +73,7 @@
               <p>Login</p>
             <% end %>
           </li>
-          <li class="list-inline-item">
+          <li class="owner">
             <%= link_to new_admin_session_path do %>
               <p>管理者はこちら</p>
             <% end %>
@@ -86,7 +86,15 @@
       <h1>ステージレポ</h1>
     </div> -->
     <div class ="jumbotron jumbotron-fluid">
-      <div class="title-cover"></div>
+      <% if !admin_signed_in? %>
+        <%= link_to root_path do %>
+          <div class="title-cover"></div>
+        <% end %>
+      <% else %>
+        <%= link_to admin_root_path do %>
+          <div class="title-cover"></div>
+        <% end %>
+      <% end %>
     </div>
     <%= yield %>
     <footer>
