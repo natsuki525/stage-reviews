@@ -14,7 +14,10 @@ describe 'ヘッダーのテスト' do
         is_expected.to have_content 'About'
       end
       it 'loginリンクが表示される' do
-        is_expected.to have_content 'Login'
+        is_expected.to have_content 'Log in'
+      end
+      it 'signupリンクが表示される' do
+        is_expected.to have_content 'Sign up'
       end
     end
     context 'ヘッダーのリンクを確認' do
@@ -28,8 +31,12 @@ describe 'ヘッダーのテスト' do
         is_expected.to eq(home_about_path)
       end
       it 'ログイン画面に遷移する' do
-        click_link 'Login'
+        click_link 'Log in'
         is_expected.to eq(new_user_session_path)
+      end
+      it '新規登録画面に遷移する' do
+        click_link 'Sign in'
+        is_expected.to eq(new_registration_session_path)
       end
     end
   end
@@ -71,10 +78,10 @@ describe 'ヘッダーのテスト' do
         click_link 'MyPage'
         expect(current_path).to eq('/users/'+user.id.to_s)
       end
-      # it 'Logoutする' do
-      #   click_link 'Logout'
-      #   expect(current_path).to eq()
-      # end
+      it 'Logoutする' do
+        click_link 'Logout'
+        expect(current_path).to eq(root_path)
+      end
     end
   end
 end

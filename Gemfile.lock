@@ -53,8 +53,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    archive-zip (0.12.0)
-      io-like (~> 0.3.0)
     arel (9.0.0)
     autoprefixer-rails (9.7.4)
       execjs
@@ -81,9 +79,6 @@ GEM
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
     childprocess (3.0.0)
-    chromedriver-helper (2.1.1)
-      archive-zip (~> 0.10)
-      nokogiri (~> 1.8)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -92,7 +87,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     crass (1.0.6)
     devise (4.7.1)
       bcrypt (~> 3.0)
@@ -109,11 +104,13 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
-    factory_bot (4.11.1)
-      activesupport (>= 3.0.0)
-    factory_bot_rails (4.11.1)
-      factory_bot (~> 4.11.1)
-      railties (>= 3.0.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
+    faker (2.10.2)
+      i18n (>= 1.6, < 2)
     ffi (1.12.2)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
@@ -127,9 +124,8 @@ GEM
     i18n_generators (2.2.2)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
-    io-like (0.3.0)
-    jbuilder (2.9.1)
-      activesupport (>= 4.2.0)
+    jbuilder (2.10.0)
+      activesupport (>= 5.0.0)
     jquery-rails (4.3.5)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -167,7 +163,7 @@ GEM
     mysql2 (0.5.3)
     netrc (0.11.0)
     nio4r (2.5.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     polyamorous (2.3.2)
@@ -180,7 +176,7 @@ GEM
       pry (>= 0.10.4)
     public_suffix (4.0.3)
     puma (3.12.2)
-    rack (2.1.2)
+    rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -309,6 +305,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdrivers (4.2.0)
+      nokogiri (~> 1.6)
+      rubyzip (>= 1.3.0)
+      selenium-webdriver (>= 3.0, < 4.0)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -324,11 +324,11 @@ DEPENDENCIES
   bootstrap4-datetime-picker-rails
   byebug
   capybara (>= 2.15)
-  chromedriver-helper
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
-  factory_bot_rails (~> 4.11)
+  factory_bot_rails
+  faker
   font-awesome-rails
   i18n_generators
   jbuilder (~> 2.5)
@@ -343,7 +343,7 @@ DEPENDENCIES
   ransack
   refile!
   refile-mini_magick
-  rspec-rails (~> 3.7)
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -353,6 +353,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webdrivers
 
 RUBY VERSION
    ruby 2.5.7p206
