@@ -6,7 +6,7 @@
           		<h2><%= pluralize(@review.errors.count, "error") %> prohibited this user from being saved:</h2>
           		<ul>
           			<% @review.errors.full_messages.each do |msg| %>
-            		<li><%= msg %></li>
+            			<li><%= msg %></li>
           			<% end %>
           		</ul>
         	</div>
@@ -41,7 +41,7 @@
     		<div class="field">
 				<lavel class="theater">劇場</lavel>
 				<p>
-					<%= radio_button_tag(:selected_btn, "been_theater") %>
+					<%= radio_button_tag(:selected_btn, "been_theater", true) %>
 					<%= label_tag(:been_theater, "行ったことのある劇場から選択") %>
 					<%= f.collection_select :theater, @theaters, :id, :name,{},class:"custom-select col-7" %>
 				</p>
