@@ -37,7 +37,7 @@
  // }
 
  .jumbotron {
-	background-image: image-url(computer.jpg);
+	background-image: image-url("computer.jpg");
 	height: 400px;
 	padding-top: 60px;
 	width: 100%;
@@ -48,7 +48,7 @@
 	.title-cover {
 		width: 400px;
 		height: 200px;
-		background-image: image-url(book3.png);
+		background-image: image-url("book3.png");
 		background-color: rgba(225,225,225,0.5);
 		margin: 0 auto;
 		text-align: center;
@@ -766,7 +766,7 @@ footer {
 	.container {
 		height: 100px;
 	}
-	background-image: image-url(footer.jpeg);
+	background-image: image-url("footer.jpeg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
