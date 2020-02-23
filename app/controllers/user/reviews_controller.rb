@@ -12,6 +12,7 @@ class User::ReviewsController < ApplicationController
       @review = Review.new(review_params)
  			@review.user_id = current_user.id
  			@review.theater_name = Theater.find(params[:review][:theater]).name
+      @theaters = Theater.where(user_id: current_user.id)
  			if @review.save
  				redirect_to root_path
  				flash[:notice_review_new] = "レビューが投稿されました！"
