@@ -43,7 +43,7 @@
 				<p>
 					<%= radio_button_tag(:selected_btn, "been_theater") %>
 					<%= label_tag(:been_theater, "行ったことのある劇場から選択") %>
-					<%= f.collection_select :theater, @theaters, :id, :name,{},class:"custom-select col-7" %>
+					<%= f.collection_select :theater, Theater.where(user_id: current_user.id), :id, :name,{},class:"custom-select col-7" %>
 				</p>
 
 				<p>

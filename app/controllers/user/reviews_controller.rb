@@ -3,7 +3,6 @@ class User::ReviewsController < ApplicationController
 
  def new
  	@review = Review.new
- 	@theaters = Theater.where(user_id: current_user.id)
  end
 
  def create
