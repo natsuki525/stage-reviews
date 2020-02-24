@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get "/home/about", to:'home#about'
-  delete 'users/:id', to:'user/users#update_dl'
+  delete 'users/:id/update_dl', to:'user/users#update_dl', as: 'users_update_dl'
 
   devise_for :admins, controllers: {
   	sessions: 'devise/admin/sessions',
