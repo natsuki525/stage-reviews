@@ -9,13 +9,13 @@
 				<th style="width:20%">顧客ID</th>
 				<td><%= @user.id %>
 					<div class = "customer-status text-white">
-						<% if @user.is_deleted? %>
-							<span class="bg-danger p-2 rounded">
-							退会済
-							</span>
-						<% else %>
+						<% if @user.deleted_at.nil? %>
 							<span class="bg-primary p-2 rounded">
 							有効会員
+							</span>
+						<% else %>
+							<span class="bg-danger p-2 rounded">
+							退会済み
 							</span>
 						<% end %>
 					</div>

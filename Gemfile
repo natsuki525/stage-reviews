@@ -92,3 +92,6 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+#論理削除
+gem 'paranoia'

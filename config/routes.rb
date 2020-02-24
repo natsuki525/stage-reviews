@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get "/home/about", to:'home#about'
-  get 'user/users/leave', to:'user/users#leave'
+  delete 'users/:id', to:'user/users#update_dl'
 
   devise_for :admins, controllers: {
   	sessions: 'devise/admin/sessions',
@@ -24,6 +24,9 @@ Rails.application.routes.draw do
       resource :relationships, only: [:create, :destroy]
       get :follows, on: :member
       get :followers, on: :member
+      member do
+        get '/leave', to:'users#leave'
+      end
     end
     # resources :theaters
     resources :reviews do
