@@ -53,8 +53,8 @@ class User::ReviewsController < ApplicationController
  	case params[:selected_btn]
  		when  'been_theater'
       		@review = Review.find(params[:id])
-      		@theaters = Theater.all
-      		@theater = Theater.find(params[:id])
+      		# @theaters = Theater.all
+      		# @theater = Theater.find(params[:id])
  			@review.theater_name = Theater.find(params[:review][:theater]).name
  			if @review.update(review_params)
  				redirect_to review_path(@review)
@@ -63,18 +63,18 @@ class User::ReviewsController < ApplicationController
  				render :edit
  			end
 
-		when 'new_theater'
-			@review = Review.find(params[:id])
- 			if @review.update(review_params)
- 				@theater = Theater.new
- 				@theater.user_id = current_user.id
- 				@theater.name = @review.theater_name
- 				@theater.save
- 				redirect_to review_path(@review)
- 				flash[:notice_review_update] = "レビューが更新されました！"
- 			else
- 				render :edit
- 			end
+		# when 'new_theater'
+		# 	@review = Review.find(params[:id])
+ 	# 		if @review.update(review_params)
+ 	# 			@theater = Theater.new
+ 	# 			@theater.user_id = current_user.id
+ 	# 			@theater.name = @review.theater_name
+ 	# 			@theater.save
+ 	# 			redirect_to review_path(@review)
+ 	# 			flash[:notice_review_update] = "レビューが更新されました！"
+ 	# 		else
+ 	# 			render :edit
+ 	# 		end
  		end
  end
 
