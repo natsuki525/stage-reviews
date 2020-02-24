@@ -1,26 +1,26 @@
 class Admin::UsersController < ApplicationController
 
  def index
- 	@search_u = User.ransack(params[:q])
+ 	@search_u = User.with_deleted.ransack(params[:q])
  	@users = @search_u.result.page(params[:page])
  end
 
  def show
- 	@user = User.find(params[:id])
+ 	@user = User.with_deleted.find(params[:id])
  end
 
  def edit
- 	@user = User.find(params[:id])
+ 	@user = User.with_deleted.find(params[:id])
  end
 
  def update
- 	@user = User.find(params[:id])
- 	if @user.update(user_params)
- 		redirect_to admin_user_path(@user)
- 		flash[:notice_edit] = "会員情報が更新されました!"
+ 	@user = User.with_deleted.find(params[:id])
+ 	if params[:user][:deleted_at] == "true"
+ 		@user.restore
  	else
- 		render :edit
+ 		@user.destroy
  	end
+ 		redirect_to admin_user_path(@user)
  end
 
  private

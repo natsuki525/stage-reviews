@@ -28,49 +28,54 @@
         <% if user_signed_in? %>
           <li class="list-inline-item">
             <%= link_to root_path do %>
-              <p>Home</p>
+              <p>Home<i class="fas fa-home 2x"></i></p>
             <% end %>
           </li>
           <li class="list-inline-item">
             <%= link_to home_about_path do %>
-              <p>About</p>
+              <p>About<i class="fas fa-book-open 2x"></i></p>
             <% end %>
           </li>
           <li class="list-inline-item">
             <%= link_to user_path(current_user) do %>
-              <p>MyPage</p>
+              <p>MyPage<i class="fas fa-user-circle 2x"></i></p>
             <% end %>
           </li>
           <li class="list-inline-item">
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <p>Logout</p>
+              <p>Logout<i class="fas fa-sign-out-alt 2x"></i></p>
             <% end %>
           </li>
         <% elsif admin_signed_in? %>
           <li class="list-inline-item">
             <%= link_to admin_root_path do %>
-              <p>Home</p>
+              <p>Home<i class="fas fa-home 2x"></i></p>
             <% end %>
           </li>
           <li class="list-inline-item">
             <%= link_to destroy_admin_session_path, method: :delete do %>
-              <p>Logout</p>
+              <p>Logout<i class="fas fa-sign-out-alt 2x"></i></p>
             <% end %>
           </li>
         <% else %>
           <li class="list-inline-item">
             <%= link_to root_path do %>
-              <p>Home</p>
+              <p>Home<i class="fas fa-home 2x"></i></p>
             <% end %>
           </li>
           <li class="list-inline-item">
             <%= link_to home_about_path do %>
-              <p>About</p>
+              <p>About<i class="fas fa-book-open 2x"></i></p>
             <% end %>
           </li>
           <li class="list-inline-item">
             <%= link_to new_user_session_path do %>
-              <p>Login</p>
+              <p>Log in<i class="fas fa-sign-in-alt 2x"></i></p>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to  new_user_registration_path do %>
+              <p>Sign up<i class="fas fa-file-signature 2x"></i></p>
             <% end %>
           </li>
           <li class="owner">

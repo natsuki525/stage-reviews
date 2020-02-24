@@ -32,6 +32,13 @@ class User::UsersController < ApplicationController
   end
 
   def leave
+    @user = User.find(params[:id])
+  end
+
+  def update_dl
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
 
  private

@@ -1,5 +1,5 @@
 <div class="container user-edit">
-	<h1>プロフィール編集</h1><%= link_to "退会する", user_users_leave_path, class:"btn btn-outline-danger mb-4" %>
+	<h1>プロフィール編集</h1><%= link_to "退会する", leave_user_path, class:"btn btn-outline-danger mb-4" %>
 	<div class="row errors">
 	<% if @user.errors.any? %>
         	<div id="error_explanation">

@@ -30,10 +30,10 @@
 					</td>
 					<td><%= user.email %></td>
 					<td>
-						<% if user.is_deleted? %>
-							退会済み
-						<% else %>
+						<% if user.deleted_at.nil? %>
 							有効
+						<% else %>
+							退会済み
 						<% end %>
 					</td>
 				</tr>
