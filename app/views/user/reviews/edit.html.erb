@@ -46,12 +46,6 @@
                 <%= label_tag(:been_theater, "行ったことのある劇場から選択") %>
                 <%= f.collection_select :theater, Theater.where(user_id: current_user.id), :id, :name,{},class:"custom-select col-7" %>
                 </p>
-
-                <!-- <p>
-                <%= radio_button_tag(:selected_btn, "new_theater") %>
-                <%= label_tag(:been_theater, "新しい劇場を追加") %>
-                <%= f.text_field :theater_name, autofocus: false %>
-                </p> -->
 			</div>
 			<div class="field">
 				<lavel class="theater">座席</lavel>

@@ -199,7 +199,7 @@ h1 {
 	.review-new-icon {
 		position: fixed;
 		right: 100px;
-		top: 450px;
+		top: 470px;
 	}
 
 	i {
@@ -770,4 +770,11 @@ footer {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	p {
+		width: 200px;
+		border-radius: 10px;
+		background-color: rgba(225,225,225,0.5);
+		font-size: 25px;
+		text-align: center;
+	}
 }

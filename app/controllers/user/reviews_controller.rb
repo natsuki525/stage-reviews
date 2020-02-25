@@ -62,19 +62,6 @@ class User::ReviewsController < ApplicationController
  			else
  				render :edit
  			end
-
-		# when 'new_theater'
-		# 	@review = Review.find(params[:id])
- 	# 		if @review.update(review_params)
- 	# 			@theater = Theater.new
- 	# 			@theater.user_id = current_user.id
- 	# 			@theater.name = @review.theater_name
- 	# 			@theater.save
- 	# 			redirect_to review_path(@review)
- 	# 			flash[:notice_review_update] = "レビューが更新されました！"
- 	# 		else
- 	# 			render :edit
- 	# 		end
  		end
  end
 
@@ -86,10 +73,6 @@ class User::ReviewsController < ApplicationController
  		flash[:notice_review_destroy] = "レビューが削除されました。"
  	end
  end
-
- # def ranking
- # 	@all_ranks = Review.find(favorite.group(:review_id).order('count(review_id) desc').limit(10).pluck(:review_id))
- # end
 
  private
     def review_params

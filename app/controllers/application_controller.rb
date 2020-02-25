@@ -22,7 +22,7 @@ def after_sign_out_path_for(resource_or_scope)
 end
 
 def set_seach
-    @search = Review.ransack(params[:q])
+    @search = Review.order(created_at: :desc).ransack(params[:q])
     @search_reviews = @search.result
 end
 
