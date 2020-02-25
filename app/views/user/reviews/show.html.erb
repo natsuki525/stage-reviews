@@ -5,6 +5,13 @@
 	<div class="row">
 		<h1>「　<%= @review.title %>　」</h1>
 	</div>
+	<div class="row review-date">
+		<div class="col-8"></div>
+		<div class="col-4">
+			投稿日：<%= l @review.created_at, format: :long %><br>
+			更新日：<%= l @review.updated_at, format: :long %>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-6" style="padding-left: 100px;">
 			<%= attachment_image_tag @review, :image, :fill, 300, 400, fallback: "no-image-review.png", :size=>"300x400" %>
