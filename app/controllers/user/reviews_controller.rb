@@ -12,6 +12,7 @@ class User::ReviewsController < ApplicationController
  			@review.user_id = current_user.id
  			@review.theater_name = Theater.find(params[:review][:theater]).name
       @theaters = Theater.where(user_id: current_user.id)
+      @review.score = Language.get_data(review_params[:body])
  			if @review.save
  				redirect_to root_path
  				flash[:notice_review_new] = "レビューが投稿されました！"
@@ -21,6 +22,7 @@ class User::ReviewsController < ApplicationController
 		when 'new_theater'
 			@review = Review.new(review_params)
  			@review.user_id = current_user.id
+      @review.score = Language.get_data(review_params[:body])
  			if @review.save
  				@theater = Theater.new
  				@theater.user_id = current_user.id
@@ -41,7 +43,7 @@ class User::ReviewsController < ApplicationController
  def show
  	@review = Review.find(params[:id])
  	@user = @review.user
-
+  # @review.score = Language.get_data(review_params[:body])
  end
 
  def edit

@@ -78,12 +78,40 @@
     					<label for="label1">クリックして表示（ネタバレ有り）</label>
     						<input type="checkbox" id="label1"/>
     						<div class="hidden_show">
-      							<!--非表示ここから-->     
+      							<!--非表示ここから-->
       							<p><%= @review.body %></p>
       							<!--ここまで-->
     						</div>
 					</div>
 				<% end %>
+				<div class="sentiment">
+					<% if @review.score.present? %>
+						<% if @review.score <= -0.5 %>
+							<i class="far fa-sad-tear 3x" style="color: #3B82C4"></i>
+						<% elsif @review.score < 0.0 %>
+							<i class="far fa-frown-open 3x" style="color: #6EC7E2"></i>
+						<% elsif @review.score <= 0.5 %>
+							<i class="far fa-grin-alt 3x" style="color: #F5A500"></i>
+						<% elsif @review.score <= 1.0 %>
+							<i class="far fa-grin-squint 3x" style="color: #E84566"></i>
+						<% else %>
+							<i class="far fa-meh 3x" style="color: #92CB97"></i>
+						<% end %>
+					<% end %>
+					<!--
+					最悪の顔 -1.0~-0.5
+					<i class="far fa-sad-tear 3x"></i>
+					つまらない顔 -0.49~-0.01
+					<i class="far fa-frown-open 3x"></i>
+					笑った顔 0.01~0.5
+					<i class="far fa-grin-alt 3x"></i>
+					最高な顔 0.51~1.0
+					<i class="far fa-grin-squint 3x"></i>
+					普通の顔 0.0
+					<i class="far fa-meh 3x"></i>
+					 -->
+					<%= @review.score %>
+				</div>
 			</p>
 			<div class="tag">
 				<h3>評価</h3>

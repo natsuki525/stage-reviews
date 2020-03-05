@@ -95,3 +95,6 @@ end
 
 #論理削除
 gem 'paranoia'
+
+#google natural language api
+gem 'dotenv-rails'

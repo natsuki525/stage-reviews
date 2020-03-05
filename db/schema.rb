@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_134743) do
+ActiveRecord::Schema.define(version: 2020_03_05_133234) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_134743) do
     t.string "theater_name"
     t.boolean "is_spoiler", default: false
     t.string "troupe_name"
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "theaters", force: :cascade do |t|
