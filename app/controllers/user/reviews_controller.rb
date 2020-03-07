@@ -43,7 +43,6 @@ class User::ReviewsController < ApplicationController
  def show
  	@review = Review.find(params[:id])
  	@user = @review.user
-  # @review.score = Language.get_data(review_params[:body])
  end
 
  def edit

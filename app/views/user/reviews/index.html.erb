@@ -37,7 +37,20 @@
 				<div class="mask">
 					<div class="caption">
 					<%= review.title %><br>
-					<%= review.user.nickname %>
+					<%= review.user.nickname %><br>
+					<% if review.score.present? %>
+						<% if review.score * 10 <= -5 %>
+							<i class="far fa-sad-tear 3x" style="color: #3B82C4;"></i>
+						<% elsif review.score * 10 < 0.0 %>
+							<i class="far fa-frown-open 3x" style="color: #6EC7E2;"></i>
+						<% elsif review.score * 10 <= 5 %>
+							<i class="far fa-grin-alt 3x" style="color: #F5A500;"></i>
+						<% elsif review.score * 10 <= 10 %>
+							<i class="far fa-grin-squint 3x" style="color: #E84566;"></i>
+						<% else %>
+							<i class="far fa-meh 3x" style="color: #92CB97;"></i>
+						<% end %>
+					<% end %>
 					</div>
 				</div>
 			<% end %>
