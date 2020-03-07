@@ -47,7 +47,6 @@ class User::ReviewsController < ApplicationController
 
  def edit
  	@review = Review.find(params[:id])
- 	@Theaters = Theater.all
  end
 
  def update
@@ -56,7 +55,8 @@ class User::ReviewsController < ApplicationController
       		@review = Review.find(params[:id])
       		# @theaters = Theater.all
       		# @theater = Theater.find(params[:id])
- 			@review.theater_name = Theater.find(params[:review][:theater]).name
+ 			    @review.theater_name = Theater.find(params[:review][:theater]).name
+          @review.score = Language.get_data(review_params[:body])
  			if @review.update(review_params)
  				redirect_to review_path(@review)
  				flash[:notice_review_update] = "レビューが更新されました！"
