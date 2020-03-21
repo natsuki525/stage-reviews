@@ -5,7 +5,7 @@ FactoryBot.define do
 		first_name_kana {'ヤマダ'}
 		last_name_kana {'タロウ'}
 		nickname {'tarou1'}
-		email {'y@y'}
-		password {'yyyyyy'}
+		email {'test@test'}
+		password {'test1234'}
 	end
 end
