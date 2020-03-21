@@ -47,6 +47,10 @@ class User::ReviewsController < ApplicationController
 
  def edit
  	@review = Review.find(params[:id])
+  @user = @review.user
+  if @review.user != current_user
+      redirect_to review_path(@review)
+  end
  end
 
  def update
