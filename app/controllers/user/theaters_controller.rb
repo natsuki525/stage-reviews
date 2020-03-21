@@ -8,6 +8,10 @@ class User::TheatersController < ApplicationController
 
  def edit
  	@theater = Theater.find(params[:id])
+ 	@user = @theater.user
+ 	if @theater.user != current_user
+ 		redirect_to user_theaters_path
+ 	end
  end
 
  def update
