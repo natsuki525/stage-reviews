@@ -7,8 +7,9 @@ FactoryBot.define do
 		nickname {'tarou1'}
 		email { |n| "y#{n}@y"}
 		password {'test1234'}
+		password_confirmation {'test1234'}
 	end
-	factory :user2 do
+	factory :user2, class: User do
 		last_name { '高橋' }
 		first_name { '愛' }
 		last_name_kana { 'タカハシ' }
@@ -16,5 +17,7 @@ FactoryBot.define do
 		nickname {'ai2'}
 		email { |n| "t#{n}@t"}
 		password {'password'}
+		password_confirmation {'password'}
+		admin { 'false' }
 	end
 end
