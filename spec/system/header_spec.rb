@@ -35,8 +35,8 @@ describe 'ヘッダーのテスト' do
         is_expected.to eq(new_user_session_path)
       end
       it '新規登録画面に遷移する' do
-        click_link 'Sign in'
-        is_expected.to eq(new_registration_session_path)
+        click_link 'Sign up'
+        is_expected.to eq(new_user_registration_path)
       end
     end
   end
