@@ -27,4 +27,17 @@ FactoryBot.define do
 		image {''}
 		user2
 	end
+	factory :review3, class: Review do
+		title { Faker::Lorem.characters(number:5) }
+		body { Faker::Lorem.characters(number:20) }
+		stage_date {'2020/2/22 13:00'}
+		seat {'1階C1'}
+		view_level {'3'}
+		satisfaction_level {'4'}
+		story_level {'5'}
+		stage_set_level {'1'}
+		costume_level {'2'}
+		image {''}
+		user
+	end
 end
