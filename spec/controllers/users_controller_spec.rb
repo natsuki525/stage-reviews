@@ -7,9 +7,9 @@ describe User::UsersController, type: :system do
 
   	before do
   		visit new_user_session_path
-		fill_in 'user[email]', with: user.email
-		fill_in 'user[password]', with: user.password
-		click_button 'Log in'
+		  fill_in 'user[email]', with: user.email
+		  fill_in 'user[password]', with: user.password
+		  click_button 'Log in'
   	end
 
   	describe '#show' do
@@ -29,7 +29,21 @@ describe User::UsersController, type: :system do
   			it 'emailが表示される' do
   				expect(page).to have_content user.email
   			end
-
+        it 'Favリンクが表示される' do
+          expect(page).to have_link '', href: user_favorites_path(user)
+        end
+        it 'Clipリンクが表示される' do
+          expect(page).to have_link '', href: user_clips_path(user)
+        end
+        it '劇場リンクが表示される' do
+          expect(page).to have_link '', href: user_theaters_path(user)
+        end
+        it 'フォロー中リンクが表示される' do
+          expect(page).to have_link '', href: follows_user_path(user)
+        end
+        it 'フォロワーリンクが表示される' do
+          expect(page).to have_link '', href: followers_user_path(user)
+        end
   		end
   	end
 
