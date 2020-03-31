@@ -57,8 +57,6 @@ class User::ReviewsController < ApplicationController
  	case params[:selected_btn]
  		when  'been_theater'
       		@review = Review.find(params[:id])
-      		# @theaters = Theater.all
-      		# @theater = Theater.find(params[:id])
  			    @review.theater_name = Theater.find(params[:review][:theater]).name
           @review.score = Language.get_data(review_params[:body])
  			if @review.update(review_params)
